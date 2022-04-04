@@ -13,6 +13,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@honkhonk/vite-plugin-svgr": "^1.1.0",
     "@rushstack/eslint-patch": "^1.1.0",
     "@vitejs/plugin-vue": "^2.2.2",
     "@vue/eslint-config-prettier": "^7.0.0",
@@ -20,6 +21,7 @@
     "eslint-plugin-vue": "^8.2.0",
     "prettier": "^2.5.1",
     "sass": "^1.49.9",
-    "vite": "^2.8.4"
+    "vite": "^2.8.4",
+    "vite-svg-loader": "^3.2.0"
   }
 }
