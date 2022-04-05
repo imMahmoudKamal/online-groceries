@@ -66,7 +66,7 @@ export default {
   }
 
   &__text {
-    font-weight: 600 !important;
+    font-weight: 600;
   }
 }
 </style>
