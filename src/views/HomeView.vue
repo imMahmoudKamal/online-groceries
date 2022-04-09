@@ -19,12 +19,17 @@
       </section>
     </main>
   </div>
+
+  <FeaturesComp />
+  <CategoryComp />
+
 </template>
 
 <script setup>
 import FeaturesComp from '../components/FeaturesComp.vue';
 import SliderComp from '../components/SliderComp.vue';
 import ItemsListComp from '../components/ItemListComp.vue';
+import CategoryComp from '../components/CategoryComp.vue';
 </script>
 
 <style lang="scss" scoped>
