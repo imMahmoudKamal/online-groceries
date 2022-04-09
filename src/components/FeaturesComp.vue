@@ -1,39 +1,12 @@
 <template>
   <ul class="features">
-    <li>
+    <li v-for="{ id, title, text, icon } in features" :key="id">
       <div class="features__item">
         <span class="features__item__icon">
-          <DeliveryIcon />
+          <component :is="icon"></component>
         </span>
-        <strong class="features__item__heading">Fastest Delivery</strong>
-        <p class="features__item__text">Delivery at your door step</p>
-      </div>
-    </li>
-    <li>
-      <div class="features__item">
-        <span class="features__item__icon">
-          <ServicesIcon />
-        </span>
-        <strong class="features__item__heading">24x7 Services</strong>
-        <p class="features__item__text">Reach us when needed</p>
-      </div>
-    </li>
-    <li>
-      <div class="features__item">
-        <span class="features__item__icon">
-          <VrifiedIcon />
-        </span>
-        <strong class="features__item__heading">Vrified Brands</strong>
-        <p class="features__item__text">Guaranteed Products</p>
-      </div>
-    </li>
-    <li>
-      <div class="features__item">
-        <span class="features__item__icon">
-          <AssuranceIcon />
-        </span>
-        <strong class="features__item__heading">100% Assurance</strong>
-        <p class="features__item__text">We provide 100% assurance</p>
+        <strong class="features__item__heading">{{ title }}</strong>
+        <p class="features__item__text">{{ text }}</p>
       </div>
     </li>
   </ul>
@@ -44,12 +17,40 @@ import VrifiedIcon from '@imgs/svg/vrified.svg';
 import AssuranceIcon from '@imgs/svg/assurance.svg';
 import ServicesIcon from '@imgs/svg/services.svg';
 import DeliveryIcon from '@imgs/svg/delivery.svg';
+
+const features = [
+  {
+    id: 0,
+    title: 'Fastest Delivery',
+    text: 'Delivery at your door step',
+    icon: DeliveryIcon,
+  },
+  {
+    id: 1,
+    title: '24x7 Services',
+    text: 'Reach us when needed',
+    icon: ServicesIcon,
+  },
+  {
+    id: 2,
+    title: 'Vrified Brands',
+    text: 'Guaranteed Products',
+    icon: VrifiedIcon,
+  },
+  {
+    id: 3,
+    title: '100% Assurance',
+    text: 'We provide 100% assurance',
+    icon: AssuranceIcon,
+  },
+];
 </script>
 
 <style lang="scss" scoped>
 .features {
-  list-style: none;
+  margin: 0;
   padding: 0;
+  list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
