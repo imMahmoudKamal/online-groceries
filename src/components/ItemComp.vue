@@ -30,6 +30,23 @@ import PlusIcon from '@imgs/svg/plus.svg';
   padding-top: 100%;
   position: relative;
   border-radius: 0.75rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 0 1px rgb(var(--clr-primary) / 50%),
+      0 3px 6px rgb(var(--clr-primary) / 25%);
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
 
   .wrapper {
     position: absolute;
