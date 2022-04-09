@@ -64,8 +64,8 @@
   </div>
   <div class="trademark">
     <div class="div">
-      <img class="logo" src="../assets/images/svg/trademark.svg" />
-      <img class="connect" src="../assets/images/svg/connection.svg" />
+      <img class="logo" src="../../assets/images/svg/trademark.svg" />
+      <img class="connect" src="../../assets/images/svg/connection.svg" />
     </div>
   </div>
 </template>
