@@ -1,7 +1,4 @@
 <template>
-  <!-- Navigation -->
-  <NavbarComp />
-
   <div class="container">
     <!-- Hero Section -->
     <div class="hero">
@@ -22,17 +19,12 @@
       </section>
     </main>
   </div>
-
-  <!-- Footer -->
-  <FooterComp />
 </template>
 
 <script setup>
 import FeaturesComp from '../components/FeaturesComp.vue';
 import SliderComp from '../components/SliderComp.vue';
 import ItemsListComp from '../components/ItemListComp.vue';
-import NavbarComp from '../components/layout/NavbarComp.vue';
-import FooterComp from '../components/layout/FooterComp.vue';
 </script>
 
 <style lang="scss" scoped>
