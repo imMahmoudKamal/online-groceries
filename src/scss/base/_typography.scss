@@ -15,6 +15,16 @@
   src: url('@/assets/fonts/Gilroy-SemiBold.woff2') format('woff2');
   font-weight: 600;
 }
+@font-face {
+  font-family: 'Gilroy';
+  src: url('@/assets/fonts/Gilroy-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('@/assets/fonts/Gilroy-ExtraBold.woff2') format('woff2');
+  font-weight: 900;
+}
 
 :root {
   font-size: 20px;
