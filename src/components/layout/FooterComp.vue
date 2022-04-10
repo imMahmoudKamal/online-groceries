@@ -64,16 +64,15 @@
   </div>
   <div class="trademark">
     <div class="div">
-      <img class="logo" src="../../assets/images/svg/trademark.svg" />
-      <img class="connect" src="../../assets/images/svg/connection.svg" />
+      <LogoIcon class="logo" />
+      <ConnectionIcon class="connect" />
     </div>
   </div>
 </template>
 
-<script>
-// eslint-disable-next-line prettier/prettier
-
-export default {};
+<script setup>
+import LogoIcon from '@imgs/svg/trademark.svg';
+import ConnectionIcon from '@imgs/svg/connection.svg';
 </script>
 
 <style lang="scss" scoped>
