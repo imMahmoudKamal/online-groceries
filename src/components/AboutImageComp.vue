@@ -39,6 +39,7 @@ export default {
   padding-top: 100%;
   position: relative;
   border-radius: 0.75rem;
+
   .wrapper {
     position: absolute;
     inset: 0;

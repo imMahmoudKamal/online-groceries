@@ -12,5 +12,4 @@ import FeaturesComp from '../components/FeaturesComp.vue';
 // import CategoryComp from '../components/CategoryComp.vue';
 // import TeamMemberComp from '../components/TeamMemberComp.vue';
 import TeamMemberSection from '../components/TeamMemberSection.vue';
-// import AboutImageComp from '../components/AboutImageComp.vue';
 </script>
