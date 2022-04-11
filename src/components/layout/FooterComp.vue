@@ -64,19 +64,15 @@
   </div>
   <div class="trademark">
     <div class="div">
-      <img class="logo" src="../../assets/images/svg/trademark.svg" />
-      <img class="connect" src="../../assets/images/svg/connection.svg" />
-
-      <!-- <TradeMark  class="logo"/>
-      <Connection class="connect" />  -->
+      <LogoIcon class="logo" />
+      <ConnectionIcon class="connect" />
     </div>
   </div>
 </template>
 
 <script setup>
-// eslint-disable-next-line prettier/prettier
-import TradeMark from '@imgs/svg/TradeMark.svg';
-import Connection from '@imgs/svg/connection.svg';
+import LogoIcon from '@imgs/svg/trademark.svg';
+import ConnectionIcon from '@imgs/svg/connection.svg';
 </script>
 
 <style lang="scss" scoped>
@@ -165,7 +161,6 @@ import Connection from '@imgs/svg/connection.svg';
         font-size: 0.75rem;
         margin: 0;
         margin-left: 15%;
-      
 
         & input[type='text'] {
           font-size: 0.6rem;
@@ -194,9 +189,6 @@ import Connection from '@imgs/svg/connection.svg';
       & .two {
         width: 100%;
         margin-left: 0px;
-
-
-      
       }
     }
 
@@ -226,7 +218,7 @@ import Connection from '@imgs/svg/connection.svg';
       margin-bottom: 30px;
       padding-bottom: 30px;
     }
-     @media (min-width: 1200px) and (max-width: 1440px) {
+    @media (min-width: 1200px) and (max-width: 1440px) {
       width: 95%;
       border: none;
       margin: 0;
@@ -363,7 +355,7 @@ import Connection from '@imgs/svg/connection.svg';
       }
     }
   }
-   @media (min-width: 1200px) and (max-width: 1440px) {
+  @media (min-width: 1200px) and (max-width: 1440px) {
     & .div {
       width: 100%;
       padding: 0 75px;
