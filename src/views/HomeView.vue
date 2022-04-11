@@ -23,14 +23,8 @@
 
 <script setup>
 import FeaturesComp from '../components/FeaturesComp.vue';
-<<<<<<< HEAD
-// import CategoryComp from '../components/CategoryComp.vue';
-// import TeamMemberComp from '../components/TeamMemberComp.vue';
-import TeamMemberSection from '../components/TeamMemberSection.vue';
-=======
 import SliderComp from '../components/SliderComp.vue';
 import ItemsListComp from '../components/ItemListComp.vue';
->>>>>>> 708499fbc8bc70b84935ba95269aa3bcc4665b13
 </script>
 
 <style lang="scss" scoped>

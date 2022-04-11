@@ -24,7 +24,6 @@ export default {
     padding-top: 100%;
     position: relative;
     border-radius: 0.75rem;
-
     background-color: rgb(var(--clr-orange) / 10%);
     .wrapper {
       position: absolute;
@@ -55,13 +54,12 @@ export default {
   }
 
   &__info {
-    margin-top: 1.2rem;
+    margin-top: 0.9rem;
     font-size: 0.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 0.9rem;
     text-transform: capitalize;
     line-height: 1.4;
     .member {
@@ -74,8 +72,12 @@ export default {
         font-size: 0.55rem;
         color: rgb(var(--clr-primary));
       }
+    }
+  }
 
-      @media (min-width: 48rem) {
+  @media (min-width: 36rem) {
+    &__info {
+      .member {
         &__name {
           font-size: 0.8rem;
         }
@@ -83,13 +85,16 @@ export default {
           font-size: 0.6rem;
         }
       }
-
-      @media (min-width: 62rem) {
+    }
+  }
+  @media (min-width: 75rem) {
+    &__info {
+      .member {
         &__name {
-          font-size: 1rem;
+          font-size: 0.9rem;
         }
         &__job {
-          font-size: 0.7rem;
+          font-size: 0.75rem;
         }
       }
     }
