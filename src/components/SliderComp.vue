@@ -77,7 +77,7 @@ const slides = [
 
 <style lang="scss">
 .slider {
-  height: calc(100vh - 9rem);
+  height: calc(100vh - 12rem);
   background: rgb(var(--clr-white));
   border-radius: 0.75rem;
   box-shadow: 0 3px 6px rgb(var(--clr-primary) / 10%),

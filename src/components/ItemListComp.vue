@@ -19,11 +19,14 @@ const items = [1, 2, 3, 4, 5, 6];
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 0.75rem;
+
+  @media (min-width: 23rem) {
+    gap: 1.5rem;
+  }
 
   @media (min-width: 36rem) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
   }
 
   @media (min-width: 48rem) {
