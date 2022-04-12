@@ -1,13 +1,5 @@
 <template>
   <h1>About</h1>
-  <LocationComp />
-  <FooterComp />
-</template>
-
-<script setup>
-import LocationComp from '../components/LocationComp.vue';
-import FooterComp from '../components/layout/FooterComp.vue';
-</script>
   <div class="container">
     <!-- About Banner  Section -->
     <div class="about-banner">
@@ -25,13 +17,18 @@ import FooterComp from '../components/layout/FooterComp.vue';
       <TeamMemberSection />
     </section>
   </div>
+  <LocationComp />
+  <FooterComp />
 </template>
 
 <script setup>
+import LocationComp from '../components/LocationComp.vue';
+import FooterComp from '../components/layout/FooterComp.vue';
 import AboutImageComp from '../components/AboutImageComp.vue';
 import FeaturesComp from '../components/FeaturesComp.vue';
 import TeamMemberSection from '../components/TeamMemberSection.vue';
 </script>
+
 <style lang="scss" scoped>
 .about-banner,
 .why-us,
