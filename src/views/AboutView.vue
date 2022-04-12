@@ -29,9 +29,5 @@ import TeamMemberSection from '../components/TeamMemberSection.vue';
 .team-members {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  @media (min-width: 48rem) {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
 }
 </style>
