@@ -60,13 +60,18 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 0.9rem;
     text-transform: capitalize;
     line-height: 1.4;
   }
 
   &__text {
     font-weight: 600;
+  }
+
+  @media (min-width: 48rem) {
+    &__info {
+      font-size: 0.7rem;
+    }
   }
 }
 </style>
