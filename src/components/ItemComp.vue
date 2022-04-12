@@ -51,7 +51,7 @@ import PlusIcon from '@imgs/svg/plus.svg';
   .wrapper {
     position: absolute;
     inset: 0;
-    padding: 0.75rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     line-height: 1;
@@ -69,7 +69,7 @@ import PlusIcon from '@imgs/svg/plus.svg';
   }
 
   &__img {
-    height: 40%;
+    height: 35%;
     width: 100%;
     position: relative;
 
@@ -87,13 +87,12 @@ import PlusIcon from '@imgs/svg/plus.svg';
   }
 
   &__title {
-    margin-top: 0.75rem;
+    margin-top: 0.25rem;
     font-weight: 600;
     font-size: 0.8rem;
   }
 
   &__qty {
-    margin-top: 0.25rem;
     font-size: 0.7rem;
     font-weight: 500;
     color: rgb(var(--clr-neutral-600) / 80%);
@@ -107,10 +106,10 @@ import PlusIcon from '@imgs/svg/plus.svg';
 
   &__cart {
     position: absolute;
-    bottom: 0.75rem;
-    right: 0.75rem;
-    width: 2rem;
-    height: 2rem;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
     border: none;
     background-color: rgb(var(--clr-primary));
     border-radius: 0.75rem;
@@ -118,6 +117,31 @@ import PlusIcon from '@imgs/svg/plus.svg';
     justify-content: center;
     align-items: center;
     cursor: pointer;
+  }
+
+  @media (min-width: 23rem) {
+    .wrapper {
+      padding: 0.75rem;
+    }
+
+    &__img {
+      height: 40%;
+    }
+
+    &__title {
+      margin-top: 0.75rem;
+    }
+
+    &__qty {
+      margin-top: 0.25rem;
+    }
+
+    &__cart {
+      bottom: 0.75rem;
+      right: 0.75rem;
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
 </style>

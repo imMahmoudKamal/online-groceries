@@ -35,7 +35,6 @@ import ItemsListComp from '../components/ItemListComp.vue';
   margin-bottom: 1.5rem;
 
   @media (min-width: 48rem) {
-    margin-top: 3rem;
     margin-bottom: 3rem;
   }
 }
