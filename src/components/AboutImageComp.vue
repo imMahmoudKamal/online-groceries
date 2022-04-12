@@ -33,6 +33,7 @@ export default {
   height: calc(100vh - 9rem);
   position: relative;
   border-radius: 0.75rem;
+
   &__image {
     position: absolute;
     inset: 0;
@@ -44,6 +45,7 @@ export default {
       height: 100%;
       border-radius: 0.75rem;
       width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -179,7 +181,7 @@ export default {
     }
   }
   @media (min-width: 90rem) {
-    height: 30rem;
+    height: calc(100vh - 12rem);
     &__info {
       top: 4rem;
       left: 4rem;
@@ -187,11 +189,11 @@ export default {
 
     &__titles {
       h1 {
-        font-size: 2.9rem;
-        line-height: 2.8rem;
+        font-size: 2.5rem;
+        line-height: 2.6rem;
       }
       h3 {
-        font-size: 2.4rem;
+        font-size: 1.8rem;
       }
     }
 

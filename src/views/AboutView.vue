@@ -30,10 +30,12 @@ import TeamMemberSection from '../components/TeamMemberSection.vue';
 </script>
 
 <style lang="scss" scoped>
-.about-banner,
+.about-banner {
+  margin-top: 1.5rem;
+}
 .why-us,
 .team-members {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 </style>
