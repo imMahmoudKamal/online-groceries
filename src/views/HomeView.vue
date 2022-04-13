@@ -23,6 +23,7 @@
 
 <script setup>
 import FeaturesComp from '../components/FeaturesComp.vue';
+
 import SliderComp from '../components/SliderComp.vue';
 import ItemsListComp from '../components/ItemListComp.vue';
 </script>

@@ -1,20 +1,28 @@
-<template lang="">
+<template>
   <header>
-    <div class="header-icons">
-      <router-link to="/" class="logo-container">
-        <LogoIcon class="logo-icon" />
-      </router-link>
-      <button>
-        <CartIcon class="cart-icon" />
-      </button>
+    <div class="container">
+      <div class="header__icons">
+        <router-link to="/" class="logo-container">
+          <LogoIcon class="header__icons__logo" />
+        </router-link>
+        <button>
+          <CartIcon class="header__icons__cart" />
+        </button>
+      </div>
+      <nav>
+        <ul class="navigation__list">
+          <li class="navigation__list_item">
+            <router-link to="/">HOME</router-link>
+          </li>
+          <li class="navigation__list_item">
+            <router-link to="/shop">SHOP</router-link>
+          </li>
+          <li class="navigation__list_item">
+            <router-link to="/about">ABOUT</router-link>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul class="navigation">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/shop">Shop</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
-      </ul>
-    </nav>
   </header>
 </template>
 <script setup>
@@ -28,9 +36,9 @@ header {
   background-color: #ffffff;
   filter: drop-shadow(0px 3px 6px rgb(83, 177, 117, 0.1));
 }
-.header-icons {
+.header__icons {
   height: 60px;
-  padding: 15px 25px;
+  padding: 15px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,24 +47,20 @@ header {
   display: block;
   height: 30px;
 }
-.logo-icon {
+.header__icons__logo {
   height: 100%;
 }
-.cart-icon {
-  height: 24.61;
+.header__icons__cart {
+  height: 25px;
 }
 nav {
   height: 30px;
-  padding: 0 25px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* .navigation {
-  display: flex;
-} */
-.navigation {
+.navigation__list {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -75,37 +79,45 @@ a:hover {
   cursor: pointer;
 }
 button {
+  padding: 0px;
   background: none;
   border: none;
+  height: 25px;
 }
 button:hover {
   cursor: pointer;
 }
-@media (min-width: 992px) {
+@media (min-width: 48rem) {
   header {
     height: 100px;
-    padding: 30px 240px;
   }
-  .logo-icon {
-    height: 40px;
+  .header__icons {
+    height: 100px;
   }
-  .cart-icon {
-    height: 27.61;
+  .header__icons__cart {
+    height: 25px;
   }
-  .header-icons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  li a {
-    font-size: 18px;
-  }
-  .navigation {
-    width: 342px;
+  nav {
+    margin-left: 35vw;
+    width: 300px;
     justify-content: space-evenly;
     position: absolute;
-    top: 38px;
+    top: 35px;
     text-align: center;
+  }
+}
+@media (min-width: 62rem) {
+  nav {
+    margin-left: 45vw;
+    width: 342px;
+  }
+  nav li a {
+    font-size: 18px;
+  }
+}
+@media (min-width: 75rem) {
+  nav {
+    margin-left: calc(100vw * 0.5 - 342px);
   }
 }
 </style>
