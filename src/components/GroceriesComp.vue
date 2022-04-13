@@ -1,5 +1,21 @@
-<template lang="">
+<template>
   <ul class="groceries">
+    <li>
+      <div class="groceries__item">
+        <span class="groceries__item__img">
+          <PulsesIcon />
+        </span>
+        <p class="groceries__item__text">Pulses</p>
+      </div>
+    </li>
+    <li>
+      <div class="groceries__item">
+        <span class="groceries__item__img">
+          <PulsesIcon />
+        </span>
+        <p class="groceries__item__text">Pulses</p>
+      </div>
+    </li>
     <li>
       <div class="groceries__item">
         <span class="groceries__item__img">
@@ -24,16 +40,21 @@ import PulsesIcon from '@imgs/svg/pulses.svg';
 </script>
 <style lang="scss" scoped>
 .groceries {
+  all: unset;
+}
+.groceries {
   list-style: none;
-  padding: 0 0 0 25px;
   display: flex;
   overflow: auto;
   white-space: nowrap;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   &__item {
-    padding: 15px 15px;
-    width: calc(75vw - 25px);
-    // width: 267.29px;
+    padding: 0px 15px;
+    width: 267px;
     height: 100px;
     margin-right: 25px;
     border-radius: 18px;
@@ -41,13 +62,31 @@ import PulsesIcon from '@imgs/svg/pulses.svg';
     display: flex;
     align-items: center;
 
+    @media (min-width: 62rem) {
+      height: 250px;
+      width: 460px;
+      padding: 0 30px;
+    }
+
     &__img {
       margin-right: 1rem;
+
+      @media (min-width: 62rem) {
+        margin-right: 1.5rem;
+        height: 180px;
+        width: 180px;
+        background-size: 180px;
+      }
     }
 
     &__text {
-      font-size: 20px;
+      font-size: 1rem;
       font-weight: 600;
+      color: #3e423f;
+
+      @media (min-width: 62rem) {
+        font-size: 1.6rem;
+      }
     }
   }
 }
