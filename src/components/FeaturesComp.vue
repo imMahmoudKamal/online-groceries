@@ -48,13 +48,15 @@ const features = [
 
 <style lang="scss" scoped>
 .features {
-  margin: 0;
+  --gap: 0.75rem;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: var(--gap);
   text-align: center;
+  max-width: 60rem; /* 1200px */
 
   &__item {
     display: flex;
@@ -64,13 +66,13 @@ const features = [
     &__icon {
       display: grid;
       place-content: center;
-      width: 3.75rem;
-      height: 3.75rem;
+      width: 3rem;
+      height: 3rem;
       border-radius: 50%;
       background-color: rgb(var(--clr-primary) / 10%);
 
       svg {
-        height: 2rem;
+        height: 1.75rem;
         fill: rgb(var(--clr-primary));
       }
     }
@@ -91,6 +93,19 @@ const features = [
       margin-top: 0.25rem;
       font-size: 0.6rem;
       color: rgb(var(--clr-neutral-600));
+    }
+  }
+
+  @media (min-width: 23rem) {
+    --gap: 1.25rem;
+
+    &__item__icon {
+      width: 3.75rem;
+      height: 3.75rem;
+
+      svg {
+        height: 2rem;
+      }
     }
   }
 
