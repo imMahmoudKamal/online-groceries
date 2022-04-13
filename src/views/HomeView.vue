@@ -38,10 +38,4 @@ import ItemsListComp from '../components/ItemListComp.vue';
     margin-bottom: 3rem;
   }
 }
-
-.why-us {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60rem; /* 1200px */
-}
 </style>
