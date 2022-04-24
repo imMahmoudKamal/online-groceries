@@ -4,9 +4,9 @@
       <router-link to="/" class="logo-container">
         <LogoIcon class="logo-icon" />
       </router-link>
-      <button>
+      <router-link to="/cart">
         <CartIcon class="cart-icon" />
-      </button>
+      </router-link>
     </div>
     <nav>
       <ul class="navigation">
