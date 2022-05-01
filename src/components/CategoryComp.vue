@@ -55,7 +55,7 @@ export default {
 
   &__info {
     margin-top: 1.2rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -5,11 +5,12 @@
 body {
   background-color: rgb(var(--clr-white));
   color: rgb(var(--clr-neutral-900));
+  -webkit-tap-highlight-color: transparent;
 }
 
 .container {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   margin-right: auto;
   margin-left: auto;
 
@@ -19,8 +20,8 @@ body {
     max-width: calc(100% - 2.5rem); /* 536px */
   }
 
-  @media (min-width: 90rem) {
-    max-width: 72rem; /* 1440px */
+  @media (min-width: 1441px) {
+    max-width: calc(72rem - 2.5rem); /* 1440px */
   }
 }
 

@@ -1,21 +1,21 @@
 <template>
   <div class="item">
-    <router-link to="/item-page" class="wrapper">
+    <router-link to="/category/item" class="wrapper">
       <div class="item__img">
         <span class="item__img__blur">
-          <img src="@imgs/banana.png" alt="item-image" />
+          <img :src="itemDetails.imgs[0]" alt="item-image" />
         </span>
 
-        <img src="@imgs/banana.png" alt="item-image" />
+        <img :src="itemDetails.imgs[0]" alt="item-image" />
       </div>
 
-      <strong class="item__title">Organic Bananas</strong>
-      <span class="item__qty">7pcs, Price</span>
+      <strong class="item__title">{{ itemDetails.title }}</strong>
+      <span class="item__qty">{{ itemDetails.qtyPerPrice }}</span>
 
-      <span class="item__price">$12.99</span>
+      <span class="item__price">${{ itemDetails.price }}</span>
     </router-link>
 
-    <button class="item__cart">
+    <button class="item__cart" @click="store.commit('addToCart', itemDetails)">
       <PlusIcon />
     </button>
   </div>
@@ -23,6 +23,21 @@
 
 <script setup>
 import PlusIcon from '@imgs/svg/plus.svg';
+import { useStore } from 'vuex';
+const store = useStore();
+
+const itemDetails = {
+  id: 0,
+  title: 'Natural Red Apple',
+  imgs: [
+    '/src/assets/images/apple.png',
+    '/src/assets/images/apple.png',
+    '/src/assets/images/apple.png',
+  ],
+  price: 4.99,
+  qty: 1,
+  qtyPerPrice: '1kg, Price',
+};
 </script>
 
 <style lang="scss" scoped>
@@ -51,7 +66,7 @@ import PlusIcon from '@imgs/svg/plus.svg';
   .wrapper {
     position: absolute;
     inset: 0;
-    padding: 0.75rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     line-height: 1;
@@ -69,7 +84,7 @@ import PlusIcon from '@imgs/svg/plus.svg';
   }
 
   &__img {
-    height: 40%;
+    height: 35%;
     width: 100%;
     position: relative;
 
@@ -87,13 +102,15 @@ import PlusIcon from '@imgs/svg/plus.svg';
   }
 
   &__title {
-    margin-top: 0.75rem;
+    margin-top: 0.25rem;
     font-weight: 600;
     font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__qty {
-    margin-top: 0.25rem;
     font-size: 0.7rem;
     font-weight: 500;
     color: rgb(var(--clr-neutral-600) / 80%);
@@ -107,17 +124,58 @@ import PlusIcon from '@imgs/svg/plus.svg';
 
   &__cart {
     position: absolute;
-    bottom: 0.75rem;
-    right: 0.75rem;
-    width: 2rem;
-    height: 2rem;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
     border: none;
     background-color: rgb(var(--clr-primary));
+    fill: rgb(var(--clr-white));
     border-radius: 0.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding: 0.5rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 0 0.2rem rgb(var(--clr-primary) / 60%);
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
+    }
+
+    &:active::before {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 23rem) {
+    .wrapper {
+      padding: 0.75rem;
+    }
+
+    &__img {
+      height: 40%;
+    }
+
+    &__title {
+      margin-top: 0.75rem;
+    }
+
+    &__qty {
+      margin-top: 0.25rem;
+    }
+
+    &__cart {
+      bottom: 0.75rem;
+      right: 0.75rem;
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
 </style>

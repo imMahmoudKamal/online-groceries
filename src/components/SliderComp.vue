@@ -78,6 +78,7 @@ const slides = [
 <style lang="scss">
 .slider {
   height: calc(100vh - 9rem);
+  min-height: 20rem;
   background: rgb(var(--clr-white));
   border-radius: 0.75rem;
   box-shadow: 0 3px 6px rgb(var(--clr-primary) / 10%),
@@ -162,6 +163,10 @@ const slides = [
     }
   }
 
+  @media (min-width: 23rem) {
+    height: calc(100vh - 12rem);
+  }
+
   @media (min-width: 48rem) {
     &::before {
       background: linear-gradient(
@@ -173,6 +178,8 @@ const slides = [
 
     &__slide {
       padding: 6rem 3rem;
+      display: grid;
+      grid-auto-columns: 1fr;
 
       &__subtitle,
       &__title,

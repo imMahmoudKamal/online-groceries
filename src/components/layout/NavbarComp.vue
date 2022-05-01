@@ -4,9 +4,9 @@
       <router-link to="/" class="logo-container">
         <LogoIcon class="logo-icon" />
       </router-link>
-      <button>
-        <CartIcon class="cart-icon" @click="handleRoute"/>
-      </button>
+      <router-link to="/cart">
+        <CartIcon class="cart-icon" @click="handleRoute" />
+      </router-link>
     </div>
     <nav>
       <ul class="navigation">
@@ -33,12 +33,11 @@ const handleSignOut = () => {
 };
 
 const handleRoute = () => {
-  firebase.auth().onAuthStateChanged((user)=>{
-   if(!user){
-     router.push('/signin');
-   }
-
-  })
+  firebase.auth().onAuthStateChanged((user) => {
+    if (!user) {
+      router.push('/signin');
+    }
+  });
 };
 </script>
 <style lang="css" scoped>

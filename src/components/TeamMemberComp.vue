@@ -28,7 +28,7 @@ export default {
     .wrapper {
       position: absolute;
       inset: 0;
-      padding: 0.75rem;
+      padding: 0.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -72,6 +72,12 @@ export default {
         font-size: 0.55rem;
         color: rgb(var(--clr-primary));
       }
+    }
+  }
+
+  @media (min-width: 23rem) {
+    .team__member .wrapper {
+      padding: 0.75rem;
     }
   }
 

@@ -33,9 +33,24 @@ const router = createRouter({
     {
       path: '/signin',
       name: 'signin',
-      component: () => import('../views/SignInView.vue'),
+      component: () => import('../views/SignInView.vue')},
+      {
+      path: '/cart',
+      name: 'Cart',
+      component: () => import('../views/CartView.vue'),
+    },
+    {
+      path: '/:category/:item',
+      name: 'Product',
+      component: () => import('../views/ProductView.vue'),
     },
   ],
+  scrollBehavior() {
+    return {
+      top: 0,
+      behavior: 'smooth',
+    };
+  },
 });
 
 export default router;
