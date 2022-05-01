@@ -3,19 +3,22 @@
     <router-link to="/category/item" class="wrapper">
       <div class="item__img">
         <span class="item__img__blur">
-          <img :src="itemDetails.imgs[0]" alt="item-image" />
+          <img :src="props.itemDetails.imgs[0]" alt="item-image" />
         </span>
 
-        <img :src="itemDetails.imgs[0]" alt="item-image" />
+        <img :src="props.itemDetails.imgs[0]" alt="item-image" />
       </div>
 
-      <strong class="item__title">{{ itemDetails.title }}</strong>
-      <span class="item__qty">{{ itemDetails.qtyPerPrice }}</span>
+      <strong class="item__title">{{ props.itemDetails.title }}</strong>
+      <span class="item__qty">{{ props.itemDetails.qtyPerPrice }}</span>
 
-      <span class="item__price">${{ itemDetails.price }}</span>
+      <span class="item__price">${{ props.itemDetails.price }}</span>
     </router-link>
 
-    <button class="item__cart" @click="store.commit('addToCart', itemDetails)">
+    <button
+      class="item__cart"
+      @click="store.commit('addToCart', props.itemDetails)"
+    >
       <PlusIcon />
     </button>
   </div>
@@ -25,19 +28,7 @@
 import PlusIcon from '@imgs/svg/plus.svg';
 import { useStore } from 'vuex';
 const store = useStore();
-
-const itemDetails = {
-  id: 0,
-  title: 'Natural Red Apple',
-  imgs: [
-    '/src/assets/images/apple.png',
-    '/src/assets/images/apple.png',
-    '/src/assets/images/apple.png',
-  ],
-  price: 4.99,
-  qty: 1,
-  qtyPerPrice: '1kg, Price',
-};
+const props = defineProps({ itemDetails: Object });
 </script>
 
 <style lang="scss" scoped>
