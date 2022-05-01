@@ -21,10 +21,6 @@ const items = [1, 2, 3, 4, 5, 6];
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
 
-  @media (min-width: 23rem) {
-    gap: 1.5rem;
-  }
-
   @media (min-width: 36rem) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -34,6 +30,7 @@ const items = [1, 2, 3, 4, 5, 6];
   }
 
   @media (min-width: 62rem) {
+    gap: 1.25rem;
     grid-template-columns: repeat(5, 1fr);
   }
 

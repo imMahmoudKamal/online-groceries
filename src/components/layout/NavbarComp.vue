@@ -1,27 +1,12 @@
 <template>
   <header>
-    <div class="container">
-      <div class="header__icons">
-        <router-link to="/" class="logo-container">
-          <LogoIcon class="header__icons__logo" />
-        </router-link>
-        <button>
-          <CartIcon class="header__icons__cart" />
-        </button>
-      </div>
-      <nav>
-        <ul class="navigation__list">
-          <li class="navigation__list_item">
-            <router-link to="/">HOME</router-link>
-          </li>
-          <li class="navigation__list_item">
-            <router-link to="/shop">SHOP</router-link>
-          </li>
-          <li class="navigation__list_item">
-            <router-link to="/about">ABOUT</router-link>
-          </li>
-        </ul>
-      </nav>
+    <div class="header-icons">
+      <router-link to="/" class="logo-container">
+        <LogoIcon class="logo-icon" />
+      </router-link>
+      <router-link to="/cart">
+        <CartIcon class="cart-icon" />
+      </router-link>
     </div>
   </header>
 </template>
