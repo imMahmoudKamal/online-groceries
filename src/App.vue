@@ -36,16 +36,16 @@ const route = useRoute();
 //     }
 //   });
 // });
-onBeforeMount(() => {
-  let user = firebase.auth().currentUser;
-  if (route.path === '/cart') {
-    console.log('aa');
-    if (!user) {
-      router.push('/signin');
-      console.log('aa');
-    }
-  }
-});
+// onBeforeMount(() => {
+//   let user = firebase.auth().currentUser;
+//   if (route.path === '/cart') {
+//     console.log('aa');
+//     if (!user) {
+//       router.push('/signin');
+//       console.log('aa');
+//     }
+//   }
+// });
 </script>
 
 <style>
