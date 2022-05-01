@@ -8,6 +8,44 @@
 import { RouterView } from 'vue-router';
 import NavbarComp from './components/layout/NavbarComp.vue';
 import FooterComp from './components/layout/FooterComp.vue';
+
+import { onBeforeMount } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import firebase from 'firebase/compat/app'; //v9
+
+const router = useRouter();
+const route = useRoute();
+
+// onBeforeMount(() => {
+//   // firebase.auth().onAuthStateChanged((user) => {
+//   //   if (!user) {
+//   //     router.push('signin');
+//   //   }
+
+//   //   if (user && (route.path == '/signin' || route.path == '/signup')) {
+//   //     router.push('/');
+//   //   }
+//   // });
+// });
+
+// onBeforeMount(() => {
+
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (!user && route.path == '/cart') {
+//       router.push('/signin');
+//     }
+//   });
+// });
+// onBeforeMount(() => {
+//   let user = firebase.auth().currentUser;
+//   if (route.path === '/cart') {
+//     console.log('aa');
+//     if (!user) {
+//       router.push('/signin');
+//       console.log('aa');
+//     }
+//   }
+// });
 </script>
 
 <style>
