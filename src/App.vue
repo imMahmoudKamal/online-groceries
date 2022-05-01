@@ -28,13 +28,23 @@ const route = useRoute();
 //   // });
 // });
 
-onBeforeMount(() => {
-  firebase.auth().onAuthStateChanged((user) => {
+// onBeforeMount(() => {
 
-    if (!user && (route.path == '/')) {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (!user && route.path == '/cart') {
+//       router.push('/signin');
+//     }
+//   });
+// });
+onBeforeMount(() => {
+  let user = firebase.auth().currentUser;
+  if (route.path === '/cart') {
+    console.log('aa');
+    if (!user) {
       router.push('/signin');
+      console.log('aa');
     }
-  });
+  }
 });
 </script>
 

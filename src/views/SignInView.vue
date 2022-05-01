@@ -50,6 +50,7 @@ import LogoIconBig from '@imgs/svg/trademarkbig.svg';
 import firebase from 'firebase/compat/app'; //v9
 import { useRouter, useRoute } from 'vue-router';
 import { ref } from '@vue/reactivity';
+import { getAuth} from 'firebase/auth';
 
 const router=useRouter();
 

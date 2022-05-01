@@ -5,12 +5,12 @@
         <LogoIcon class="logo-icon" />
       </router-link>
       <router-link to="/cart">
-        <CartIcon class="cart-icon" @click="handleRoute" />
+        <CartIcon class="cart-icon"/>
       </router-link>
     </div>
     <nav>
       <ul class="navigation">
-        <li><router-link to="/" @click="handleRoute">Home</router-link></li>
+        <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/shop">Shop</router-link></li>
         <li><router-link to="/about">About</router-link></li>
       </ul>
@@ -32,13 +32,13 @@ const handleSignOut = () => {
   router.push('/signin');
 };
 
-const handleRoute = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (!user) {
-      router.push('/signin');
-    }
-  });
-};
+// const handleRoute = () => {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (!user) {
+//       router.push('/signin');
+//     }
+//   });
+// };
 </script>
 <style lang="css" scoped>
 header {

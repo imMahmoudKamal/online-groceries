@@ -60,7 +60,7 @@ import LogoIcon from '@imgs/svg/trademark.svg';
 import LogoIconBig from '@imgs/svg/trademarkbig.svg';
 
 import firebase from 'firebase/compat/app'; //v9
-
+import { getAuth} from 'firebase/auth';
 import { ref } from '@vue/reactivity';
 const name = ref('');
 const email = ref('');

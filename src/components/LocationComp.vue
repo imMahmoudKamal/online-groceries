@@ -1,141 +1,152 @@
 <template>
-  <div class="locations">
-    <div class="locations__img">
-      <img src="@imgs/Location.jpg" alt="location" />
+  <div class="parent">
+    <h2>Location</h2>
+    <div class="line"></div>
+    <div class="parent__main">
+      <p class="main__one">
+        Nectar Headquarters 1145 17th Street NW Washington, DC 20036
+      </p>
+      <img class="main__image" src="../assets/images/Location.jpg" />
+      <p class="main__two">
+        Nectar Headquarters 1145 17th Street NW Washington, DC 20036
+      </p>
+      <p class="main__three">
+        Nectar Headquarters 1145 17th Street NW Washington, DC 20036
+      </p>
     </div>
-
-    <ul class="locations__list">
-      <li v-for="{ id, address } of locations" :key="id">
-        <address class="locations__list__address">{{ address }}</address>
-      </li>
-    </ul>
   </div>
 </template>
 
-<script setup>
-const locations = [
-  {
-    id: 0,
-    address: 'Nectar Headquarters 1145 17th Street NW Washington, DC 20036',
-  },
-  {
-    id: 1,
-    address: 'Nectar Headquarters 1145 17th Street NW Washington, DC 20036',
-  },
-  {
-    id: 2,
-    address: 'Nectar Headquarters 1145 17th Street NW Washington, DC 20036',
-  },
-];
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
-.locations,
-.locations__list {
-  --gap: 0.75rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--gap);
+.parent {
+  margin: 0 25px;
+  margin-bottom: 30px;
 
-  @media (min-width: 23rem) {
-    --gap: 1.5rem;
+  & h2 {
+    // font-family: 'Gilroy-SemiBold';
+    font-size: 1.25rem;
+    @media (min-width: 768px) and (max-width: 992px) {
+      font-size: 1.5rem;
+    }
+    @media (min-width: 992px) and (max-width: 1440px) {
+      font-size: 2rem;
+    }
+    @media (min-width: 1400px) {
+      margin-left: 20px;
+    }
+  }
+  @media (min-width: 1440px) {
+    max-width: 1440px;
+    margin: auto;
+    & .line {
+      border-bottom: solid 3px #7c7c7c;
+      margin-left: 20px;
+      width: 75px;
+    }
   }
 }
+.parent__main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 
-.locations {
-  position: relative;
+  & .main__one {
+    font-size: 14px;
+    color: #7c7c7c;
 
-  &__img {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    padding-top: 100%;
-    position: relative;
+    // font-family: 'Gilroy-Medium';
+  }
+  & .main__two {
+    font-size: 14px;
+    color: #7c7c7c;
 
-    img {
-      position: absolute;
-      inset: 0;
+    // font-family: 'Gilroy-Medium';
+  }
+  & .main__three {
+    font-size: 14px;
+    color: #7c7c7c;
+
+    // font-family: 'Gilroy-Medium';
+  }
+
+  & .main__image {
+    width: 250px;
+  }
+  @media (min-width: 576px) and (max-width: 768px) {
+    & .main__one {
+      font-size: 1.25rem;
+    }
+    & .main__two {
+      font-size: 1.25rem;
+    }
+    & .main__three {
+      font-size: 1.25rem;
+    }
+    & .main__image {
+      width: 350px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    & .main__one {
+      font-size: 1.25rem;
+    }
+    & .main__two {
+      font-size: 1.25rem;
+    }
+    & .main__three {
+      font-size: 1.25rem;
+    }
+    & .main__image {
+      width: 450px;
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1440px) {
+    grid-template-columns: 1fr 150px 500px;
+    grid-template-rows: 150px 150px 150px 150px;
+    margin-top: 30px;
+    & .main__one,
+    & .main__two,
+    & .main__three {
+      font-size: 1rem;
+      grid-column-start: 1;
+      grid-column-end: 1;
+    }
+
+    & .main__image {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 0.75rem;
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row: 1/4;
     }
   }
 
-  &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    grid-column: 1/3;
-    grid-row: 1/3;
-
-    li {
-      position: relative;
-
-      &:nth-child(1) {
-        padding-top: 100%;
-
-        address {
-          position: absolute;
-          inset: 0;
-        }
-      }
-
-      &:nth-child(2),
-      &:nth-child(3) {
-        grid-row: 2/3;
-      }
+  @media (min-width: 1440px) {
+    margin-top: 30px;
+    grid-template-columns: 100px 192px 440px 708px;
+    grid-template-rows: 100px 100px 100px 100px;
+    grid-column-gap: 0px;
+    & .main__one,
+    & .main__two,
+    & .main__three {
+      font-size: 18px;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      width: 200px;
+      height: 72px;
     }
 
-    &__address {
-      font-size: 0.7rem;
-      font-style: normal;
-      color: rgb(var(--clr-neutral-600));
-      line-height: 1.2rem;
-    }
-  }
-
-  @media (min-width: 23rem) {
-    &__list__address {
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (min-width: 36rem) {
-    &__list {
-      grid-column: 1/2;
-      grid-row: 1/2;
-      grid-template-columns: 1fr;
-      align-items: center;
-
-      & li:nth-child(1) {
-        padding-top: unset;
-
-        address {
-          position: static;
-        }
-      }
-
-      & li:nth-child(2),
-      & li:nth-child(3) {
-        grid-row: unset;
-      }
-    }
-  }
-
-  @media (min-width: 62rem) {
-    &__img {
-      padding-top: 56.25%;
-    }
-
-    &__list__address {
-      max-width: 10rem;
-      margin-left: calc((100% / 12) + 1.5rem);
-    }
-  }
-
-  @media (min-width: 1441px) {
-    &__list__address {
-      margin-left: calc((1165px / 12) + 1.25rem);
+    & .main__image {
+      width: 708px;
+      height: 413px;
+      grid-column-start: 4;
+      grid-column-end: 4;
+      grid-row: 1/4;
     }
   }
 }

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Shop from '../views/ShopView.vue';
 import About from '../views/AboutView.vue';
+import firebase from 'firebase/compat/app'; //v9
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,11 +34,15 @@ const router = createRouter({
     {
       path: '/signin',
       name: 'signin',
-      component: () => import('../views/SignInView.vue')},
-      {
+      component: () => import('../views/SignInView.vue'),
+    },
+    {
       path: '/cart',
       name: 'Cart',
       component: () => import('../views/CartView.vue'),
+      meta: {
+        requireAuth: true,
+      },
     },
     {
       path: '/:category/:item',
@@ -51,6 +56,27 @@ const router = createRouter({
       behavior: 'smooth',
     };
   },
+});
+
+const getCurrentUser = () => {
+  return new Promise((reslove, reject) => {
+    const removeListener = firebase.auth().onAuthStateChanged((user) => {
+      removeListener();
+      reslove(user);
+    }, reject);
+  });
+};
+
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some((record) => record.meta.requireAuth)) {
+    if (await getCurrentUser()) {
+      next();
+    } else {
+      next('/signin');
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
