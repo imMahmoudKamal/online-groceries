@@ -62,16 +62,25 @@ import LogoIconBig from '@imgs/svg/trademarkbig.svg';
 import firebase from 'firebase/compat/app'; //v9
 import { getAuth} from 'firebase/auth';
 import { ref } from '@vue/reactivity';
+import {useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 const name = ref('');
 const email = ref('');
 const password = ref('');
 const error = ref('');
+const router=useRouter()
+const store=useStore();
 
 const handleForm = async () => {
   try {
-    let user = await firebase
+    let res = await firebase
       .auth()
       .createUserWithEmailAndPassword(email.value, password.value);
+      if(res){
+       store.commit('setUser', res.user);
+          router.push('/');
+      }
+    
   } catch (err) {
     if (password.value.length <= 6) {
       error.value = 'password must be 6 letters at least';

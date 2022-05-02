@@ -41,6 +41,7 @@ export default createStore({
         qtyPerPrice: '1kg, Price',
       },
     ],
+    user: localStorage.getItem('user')|| null,
   },
 
   mutations: {
@@ -75,6 +76,11 @@ export default createStore({
           item.id === itemID ? { ...item, qty: itemQty } : item
         ),
       ]);
+    },
+    setUser(state, payload) {
+      state.user = payload;
+      localStorage.setItem('user',payload)
+      console.log(state.user);
     },
   },
 
