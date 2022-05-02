@@ -48,21 +48,26 @@ import LogoIcon from '@imgs/svg/trademark.svg';
 import LogoIconBig from '@imgs/svg/trademarkbig.svg';
 
 import firebase from 'firebase/compat/app'; //v9
-import { useRouter, useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
 import { ref } from '@vue/reactivity';
-import { getAuth} from 'firebase/auth';
+import { useStore } from 'vuex';
 
-const router=useRouter();
+const router = useRouter();
 
 const email = ref('');
 const password = ref('');
 const error = ref('');
+const store = useStore();
 const handleForm = async () => {
   try {
-    let user = await firebase
+    let res = await firebase
       .auth()
       .signInWithEmailAndPassword(email.value, password.value);
-          router.push('/');
+    if (res) {
+      store.commit('setUser', res.user);
+      console.log(store.state.user);
+    }
+    router.push('/');
   } catch (err) {
     error.value = 'invalid password or email';
   }

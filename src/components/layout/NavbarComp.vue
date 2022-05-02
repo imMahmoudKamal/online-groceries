@@ -5,7 +5,7 @@
         <LogoIcon class="logo-icon" />
       </router-link>
       <router-link to="/cart">
-        <CartIcon class="cart-icon"/>
+        <CartIcon class="cart-icon" />
       </router-link>
     </div>
     <nav>
@@ -17,6 +17,7 @@
     </nav>
   </header>
   <button @click="handleSignOut">sign out</button>
+  <span v-if="store.state.user">{{store.state.user.email}}</span>
 </template>
 <script setup>
 // export default {};
@@ -25,10 +26,17 @@ import LogoIcon from '@imgs/svg/logo-icon.svg';
 import CartIcon from '@imgs/svg/cart-icon.svg';
 import firebase from 'firebase/compat/app'; //v9
 import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
+const store = useStore();
+
 const router = useRouter();
 
 const handleSignOut = () => {
   firebase.auth().signOut();
+    console.log(store.state.user);
+  store.commit('setUser', null);
+  localStorage.removeItem('user');
+  console.log(store.state.user);
   router.push('/signin');
 };
 
@@ -39,6 +47,7 @@ const handleSignOut = () => {
 //     }
 //   });
 // };
+
 </script>
 <style lang="css" scoped>
 header {
