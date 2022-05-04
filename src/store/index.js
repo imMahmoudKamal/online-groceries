@@ -136,6 +136,6 @@ export default createStore({
         .filter((item) => item != state.categoryName)
         .splice(state.listIndex));
     },
-    setWindowSize: (state) => state.windowSize,
+    getWindowSize: (state) => state.windowSize,
   },
 });
