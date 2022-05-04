@@ -29,18 +29,9 @@ export default {
       this.$store.commit('setCategoryName', name);
       this.$store.commit('setFilteredCat', name);
     },
-    // getData() {
-    //   fetch('../../db.json')
-    //     .then((res) => res.json())
-    //     .then(({ categoriesInfo }) => (this.categoriesInfo = categoriesInfo));
-    // },
   },
 
-  created() {
-    // this.getData();
-    // this.categoriesInformation = this.categoriesInfo;
-    // console.log(this.categoriesInfo)
-  },
+  created() {},
 };
 </script>
 
