@@ -1,15 +1,16 @@
 <template>
   <ul class="items-list">
-    <li v-for="item in items" :key="item">
-      <ItemComp />
+    <li v-for="item in props.itemsList" :key="item">
+      <ItemComp :itemDetails="item" />
     </li>
   </ul>
 </template>
 
 <script setup>
+// import { ref } from 'vue';
 import ItemComp from './ItemComp.vue';
 
-const items = [1, 2, 3, 4, 5, 6];
+const props = defineProps({ itemsList: Object });
 </script>
 
 <style lang="scss" scoped>
