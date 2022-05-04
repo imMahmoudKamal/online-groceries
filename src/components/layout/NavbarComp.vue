@@ -18,12 +18,39 @@
       </ul>
     </nav>
   </header>
+  <button @click="handleSignOut">sign out</button>
+  <span v-if="user">{{ user.email }}</span>
 </template>
 <script setup>
 // export default {};
 // Element.getBoundingClientRect()
 import LogoIcon from '@imgs/svg/logo-icon.svg';
 import CartIcon from '@imgs/svg/cart-icon.svg';
+import firebase from 'firebase/compat/app'; //v9
+import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
+import { computed } from '@vue/runtime-core';
+const store = useStore();
+
+const router = useRouter();
+
+const handleSignOut = () => {
+  firebase.auth().signOut();
+  console.log(store.state.user);
+  store.commit('setUser', null);
+  localStorage.removeItem('user');
+  console.log(store.state.user);
+  router.push('/signin');
+};
+
+const user = computed(() => store.state.user);
+// const handleRoute = () => {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (!user) {
+//       router.push('/signin');
+//     }
+//   });
+// };
 </script>
 <style lang="css" scoped>
 header {

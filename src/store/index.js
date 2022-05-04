@@ -57,6 +57,7 @@ export default createStore({
     hiddenList: [],
     listIndex: '',
     windowSize: '',
+    user: localStorage.getItem('user') || null,
   },
 
   mutations: {
@@ -112,6 +113,11 @@ export default createStore({
     },
     setWindowSize: (state, width) => {
       state.windowSize = width;
+    },
+    setUser(state, payload) {
+      state.user = payload;
+      localStorage.setItem('user', payload);
+      console.log(state.user);
     },
   },
 

@@ -9,6 +9,7 @@
     "server": "json-server db.json -w -p 2000"
   },
   "dependencies": {
+    "firebase": "^9.7.0",
     "swiper": "^8.0.7",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
