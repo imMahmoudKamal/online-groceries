@@ -39,17 +39,10 @@ import FeaturesComp from '../components/FeaturesComp.vue';
 import SliderComp from '../components/SliderComp.vue';
 import ItemsListComp from '../components/ItemListComp.vue';
 import categoryList from '../components/CategoryList.vue';
-const categories = ref(null);
-fetch('../../db.json')
-  .then((res) => res.json())
-  .then(
-    ({ categoriesInfo }) => (categories.value = categoriesInfo.splice(0, 6))
-  );
+import DB from '@/db.json';
 
-const itemsList = ref(null);
-fetch('../../db.json')
-  .then((res) => res.json())
-  .then(({ featureItems }) => (itemsList.value = featureItems));
+const categories = ref(DB.categoriesInfo.filter((item, index) => index < 6));
+const itemsList = ref(DB.featureItems);
 </script>
 
 <style lang="scss" scoped>

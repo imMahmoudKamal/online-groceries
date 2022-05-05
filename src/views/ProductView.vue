@@ -18,11 +18,9 @@
 import { ref } from 'vue';
 import ItemDetailsComp from '../components/ItemDetailsComp.vue';
 import ItemsListComp from '../components/ItemListComp.vue';
+import DB from '@/db.json';
 
-const itemsList = ref(null);
-fetch('../../db.json')
-  .then((res) => res.json())
-  .then(({ featureItems }) => (itemsList.value = featureItems));
+const itemsList = ref(DB.featureItems);
 </script>
 
 <style lang="scss" scoped>

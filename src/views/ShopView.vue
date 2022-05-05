@@ -11,12 +11,9 @@
 <script setup>
 import categoryList from '../components/CategoryList.vue';
 import { ref } from 'vue';
-const categories = ref(null);
-fetch('../../db.json')
-  .then((res) => res.json())
-  .then(({ categoriesInfo }) => {
-    categories.value = categoriesInfo;
-  });
+import DB from '@/db.json';
+
+const categories = ref(DB.categoriesInfo);
 </script>
 
 <style lang="scss">
