@@ -4,9 +4,14 @@
       <router-link to="/" class="logo-container">
         <LogoIcon class="header__icons__logo" />
       </router-link>
-      <router-link to="/cart">
-        <CartIcon class="header__icons__cart" />
-      </router-link>
+      <div>
+        <router-link to="/signin">
+          <UserIcon class="header__icons__user" />
+        </router-link>
+        <router-link to="/cart">
+          <CartIcon class="header__icons__cart" />
+        </router-link>
+      </div>
     </div>
   </header>
   <nav>
@@ -24,6 +29,7 @@
 // Element.getBoundingClientRect()
 import LogoIcon from '@imgs/svg/logo-icon.svg';
 import CartIcon from '@imgs/svg/cart-icon.svg';
+import UserIcon from '@imgs/svg/user-icon.svg';
 import firebase from 'firebase/compat/app'; //v9
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
@@ -71,6 +77,9 @@ header {
 }
 .header__icons__cart {
   height: 25px;
+}
+.header__icons__user {
+  margin-right: 15px;
 }
 nav {
   height: 30px;
