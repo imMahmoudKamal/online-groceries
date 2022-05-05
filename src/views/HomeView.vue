@@ -11,13 +11,11 @@
         <FeaturesComp />
       </section>
 
-<<<<<<< HEAD
       <!-- Groceries Section -->
       <section class="groceries">
         <h2 class="section-title">Groceries</h2>
-
         <GroceriesComp />
-=======
+      </section>
       <!-- Categories Section -->
       <section class="category-Info" aria-labelledby="#category-Info">
         <div class="cat__title">
@@ -28,7 +26,6 @@
         </div>
 
         <categoryList :categoriesInfo="categories" />
->>>>>>> a737ef0cf665ad37ac1b5a907daebbb0919fe27b
       </section>
 
       <!-- Best Selling Section -->
@@ -42,13 +39,9 @@
 </template>
 
 <script setup>
-<<<<<<< HEAD
-=======
 import { ref } from 'vue';
 import FeaturesComp from '../components/FeaturesComp.vue';
->>>>>>> a737ef0cf665ad37ac1b5a907daebbb0919fe27b
 import SliderComp from '../components/SliderComp.vue';
-import FeaturesComp from '../components/FeaturesComp.vue';
 import GroceriesComp from '../components/GroceriesComp.vue';
 import ItemsListComp from '../components/ItemListComp.vue';
 import categoryList from '../components/CategoryList.vue';
