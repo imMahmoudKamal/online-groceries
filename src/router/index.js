@@ -1,10 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-<<<<<<< HEAD
-=======
 import Shop from '../views/ShopView.vue';
 import About from '../views/AboutView.vue';
 import firebase from 'firebase/compat/app'; //v9
->>>>>>> 94f31f0e10fb80301d6d600d3f7825d77d41e189
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,8 +16,6 @@ const router = createRouter({
       name: 'vuex',
       component: () => import('../views/VuexExample.vue'),
     },
-<<<<<<< HEAD
-=======
     {
       path: '/shop',
       name: 'Shop',
@@ -54,7 +49,6 @@ const router = createRouter({
       name: 'Product',
       component: () => import('../views/ProductView.vue'),
     },
->>>>>>> 5ad4407787e85de256cf6a57c26310506e81dca6
   ],
   scrollBehavior() {
     return {

@@ -1,14 +1,21 @@
 <template>
   <header>
-    <div class="header-icons">
+    <div class="header__icons container">
       <router-link to="/" class="logo-container">
-        <LogoIcon class="logo-icon" />
+        <LogoIcon class="header__icons__logo" />
       </router-link>
       <router-link to="/cart">
-        <CartIcon class="cart-icon" />
+        <CartIcon class="header__icons__cart" />
       </router-link>
     </div>
   </header>
+  <nav>
+    <ul class="navigation__list">
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/shop">Shop</router-link></li>
+      <li><router-link to="/about">About</router-link></li>
+    </ul>
+  </nav>
   <button @click="handleSignOut">sign out</button>
   <span v-if="user">{{ user.email }}</span>
 </template>
@@ -31,7 +38,7 @@ const handleSignOut = () => {
   store.commit('setUser', null);
   localStorage.removeItem('user');
   console.log(store.state.user);
-  router.push('/signin');
+  router.push('/signin'); //go to home
 };
 
 const user = computed(() => store.state.user);
