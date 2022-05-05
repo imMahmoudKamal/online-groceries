@@ -1,44 +1,37 @@
 <template>
   <ul class="categories">
     <li
-      v-for="{ Name, ImagURL, BackgroundColor, Border } in categoriesInfo"
-      :key="Name"
+      v-for="category in categoriesInfo"
+      :key="category.Name"
+      @click="selectActiveCategory(category.Name)"
     >
-      <div
-        class="cat__item"
-        :style="{
-          backgroundColor: BackgroundColor,
-        }"
-      >
-        <router-link
-          to="/cat-page"
-          class="wrapper"
-          :style="{
-            border: Border,
-          }"
-        >
-          <div class="cat__img">
-            <img :src="ImagURL" />
-          </div>
-          <div class="cat__info">
-            <strong class="cat__text">{{ Name }}</strong>
-          </div>
-        </router-link>
-      </div>
+      <CategoryComp :categoryInfo="category" />
     </li>
   </ul>
 </template>
 
 <script>
+import CategoryComp from './CategoryComp.vue';
+
 export default {
   name: 'categoryList ',
+  components: { CategoryComp },
+  props: ['categoriesInfo'],
 
-  props: ['categoryList'],
   data() {
     return {
-      categoriesInfo: this.categoryList,
+      categoriesInformation: [],
+      activeCategory: '',
     };
   },
+  methods: {
+    selectActiveCategory(name) {
+      this.$store.commit('setCategoryName', name);
+      this.$store.commit('setFilteredCat', name);
+    },
+  },
+
+  created() {},
 };
 </script>
 
@@ -57,6 +50,7 @@ export default {
       position: relative;
       border-radius: 0.75rem;
       background-color: rgb(var(--clr-primary) / 10%);
+      cursor: pointer;
       .wrapper {
         position: absolute;
         inset: 0;

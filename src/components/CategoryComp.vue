@@ -1,11 +1,22 @@
 <template>
-  <div class="cat__item">
-    <router-link to="/cat-page" class="wrapper">
+  <div
+    class="cat__item"
+    :style="{
+      backgroundColor: categoryInformation.BackgroundColor,
+    }"
+  >
+    <router-link
+      :to="`/shop/${categoryInformation.Name}`"
+      class="wrapper"
+      :style="{
+        border: categoryInformation.Border,
+      }"
+    >
       <div class="cat__img">
-        <img src="@imgs/fruits_vegetables.png" />
+        <img :src="categoryInformation.ImagURL" />
       </div>
       <div class="cat__info">
-        <strong class="cat__text">Frash Fruits & Vegetable</strong>
+        <strong class="cat__text">{{ categoryInformation.Name }}</strong>
       </div>
     </router-link>
   </div>
@@ -14,6 +25,12 @@
 <script>
 export default {
   name: 'CategoryComp',
+  props: ['categoryInfo'],
+  data() {
+    return {
+      categoryInformation: this.categoryInfo,
+    };
+  },
 };
 </script>
 
@@ -23,6 +40,7 @@ export default {
     padding-top: 100%;
     position: relative;
     border-radius: 0.75rem;
+    cursor: pointer;
 
     background-color: rgb(var(--clr-primary) / 10%);
     .wrapper {

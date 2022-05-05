@@ -8,15 +8,19 @@
       <section class="also-you-may-like" aria-labelledby="#also-you-may-like">
         <h2 class="section-title" id="also-you-may-like">Also you May Like</h2>
 
-        <ItemsListComp items="itemsArray" />
+        <ItemsListComp :itemsList="itemsList" />
       </section>
     </main>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import ItemDetailsComp from '../components/ItemDetailsComp.vue';
 import ItemsListComp from '../components/ItemListComp.vue';
+import DB from '@/db.json';
+
+const itemsList = ref(DB.featureItems);
 </script>
 
 <style lang="scss" scoped>
