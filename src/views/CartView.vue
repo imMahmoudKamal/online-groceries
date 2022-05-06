@@ -114,15 +114,18 @@
           </div>
         </div>
       </section>
+
+      <AcceptedOrderComp v-if="orderActive" />
     </main>
   </div>
 </template>
 
 <script setup>
 import ItemCountComp from '../components/ItemCountComp.vue';
+import AcceptedOrderComp from '../components/AcceptedOrderComp.vue';
 import PlusIcon from '@imgs/svg/plus.svg';
 
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
 const store = useStore();
 
@@ -150,6 +153,12 @@ function calcTotalAmount() {
 
 function itemCount(count, id) {
   store.commit('changeQty', { id, count });
+}
+
+const orderActive = ref(false);
+function cartCheckout() {
+  // console.log('YES');
+  orderActive.value = true;
 }
 </script>
 
