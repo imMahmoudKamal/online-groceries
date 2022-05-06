@@ -14,7 +14,6 @@ export default {
   },
   components: { ItemsListComp },
   created() {
-    this.getAllCatItems();
     if (
       this.$store.getters.getFilteredCat == '' ||
       this.$store.getters.getCategoryName == ''
@@ -22,6 +21,7 @@ export default {
       this.$store.commit('setFilteredCat', 'beverages');
       this.$store.commit('setCategoryName', 'beverages');
     }
+    this.getAllCatItems();
   },
   watch: {
     $route() {
