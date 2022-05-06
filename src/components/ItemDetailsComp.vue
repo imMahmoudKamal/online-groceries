@@ -24,7 +24,9 @@
       </swiper>
     </div>
 
-    <h1 class="product__title" id="product-title">{{ itemDetails.title }}</h1>
+    <h1 class="product__title" id="product-title">
+      {{ itemDetails.title }}
+    </h1>
     <span class="product__weight">{{ itemDetails.qtyPerPrice }}</span>
 
     <ItemCountComp
@@ -40,10 +42,7 @@
     <div class="product__details">
       <h3 class="product__details__title">Product Details</h3>
 
-      <p class="product__details__text">
-        Apples are nutritious. Apples may be good for weight loss. apples may be
-        good for your heart. As part of a healtful and varied diet.
-      </p>
+      <p class="product__details__text">{{ itemDetails.description }}</p>
     </div>
 
     <hr class="separator" />
@@ -51,7 +50,9 @@
     <div class="product__nutritions">
       <h3 class="product__nutritions__title">Nutritions</h3>
 
-      <span class="product__nutritions__text">100gr</span>
+      <span class="product__nutritions__text">
+        {{ itemDetails.nutrition }}
+      </span>
     </div>
 
     <hr class="separator" />
@@ -89,26 +90,24 @@ import 'swiper/css/navigation';
 import StarIcon from '@imgs/svg/star.svg';
 import ItemCountComp from '../components/ItemCountComp.vue';
 
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useStore } from 'vuex';
 const store = useStore();
-
-const itemDetails = ref({
-  id: 0,
-  title: 'Natural Red Apple',
-  imgs: [
-    '/src/assets/images/apple.png',
-    '/src/assets/images/apple.png',
-    '/src/assets/images/apple.png',
-  ],
-  price: 4.99,
-  qty: 1,
-  qtyPerPrice: '1kg, Price',
-});
+const props = defineProps({ itemDetails: Object });
+const itemDetails = ref({ ...props.itemDetails });
 
 function itemCount(count) {
   itemDetails.value.qty = count;
 }
+
+watch(
+  () => props.itemDetails,
+  (currentValue, newValue) => {
+    if (currentValue !== newValue) {
+      itemDetails.value = { ...props.itemDetails };
+    }
+  }
+);
 </script>
 
 <style lang="scss" scoped>
@@ -273,6 +272,19 @@ $spacing: 1.5rem;
       padding-right: 5rem;
     }
 
+    &__details__text {
+      display: box;
+      display: -webkit-box;
+      display: -moz-box;
+      box-orient: vertical;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      line-clamp: 4;
+      -webkit-line-clamp: 4;
+      -moz-line-clamp: 4;
+      overflow: hidden;
+    }
+
     :is(&__weight, &__qty, &__cta) {
       grid-column: 2/3;
     }
@@ -314,6 +326,9 @@ $spacing: 1.5rem;
 
     &__details__text {
       font-size: 0.75rem;
+      line-clamp: 6;
+      -webkit-line-clamp: 6;
+      -moz-line-clamp: 6;
     }
 
     :is(&__weight, &__review) {

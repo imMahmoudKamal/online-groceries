@@ -4,7 +4,7 @@
       <section class="cart" aria-labelledby="#order-summary">
         <h1 class="section-title" id="order-summary">Order Summary</h1>
 
-        <table class="cart-items">
+        <table class="cart-items" v-if="cartItems.length">
           <thead class="cart-items__header">
             <tr class="cart-items__header__row">
               <th>Item(s)</th>
@@ -87,11 +87,32 @@
             </tr>
             <tr>
               <td colspan="4" class="cart-items__footer__cta">
-                <button>Checkout</button>
+                <button @click="cartCheckout()">Checkout</button>
               </td>
             </tr>
           </tfoot>
         </table>
+
+        <div class="cart-empty" v-else>
+          <img
+            class="cart-empty__img"
+            src="@imgs/empty-cart.png"
+            alt="Your Cart Is Empty"
+          />
+
+          <div class="cart-empty__content">
+            <h1 class="cart-empty__content__title">Your Cart Is Empty</h1>
+
+            <p class="cart-empty__content__text">
+              You have no items in your shopping cart. Please add Something in
+              your Cart.
+            </p>
+
+            <router-link class="cart-empty__content__cta" to="/">
+              Continue Shopping
+            </router-link>
+          </div>
+        </div>
       </section>
     </main>
   </div>
@@ -229,6 +250,7 @@ $gap: 0.75rem;
           outline: unset;
           appearance: none;
           padding: 0;
+          cursor: pointer;
 
           svg {
             width: 0.75rem;
@@ -417,6 +439,72 @@ $gap: 0.75rem;
 
   @media (min-width: 62rem) {
     font-size: 1.1rem;
+  }
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+    width: 15rem;
+    max-width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__text {
+      font-size: 0.8rem;
+      line-height: 1.25;
+      color: rgb(var(--clr-neutral-600));
+      max-width: 15rem;
+      text-align: center;
+    }
+
+    &__cta {
+      background-color: rgb(var(--clr-primary));
+      color: rgb(var(--clr-white));
+      height: 3rem;
+      width: 14rem;
+      border-radius: 0.75rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 0.75rem;
+        box-shadow: 0 0 0 0.2rem rgb(var(--clr-primary) / 60%);
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+      }
+
+      &:active::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    gap: 1.25rem;
   }
 }
 </style>
