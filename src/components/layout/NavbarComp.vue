@@ -1,23 +1,26 @@
-<template lang="">
+<template>
   <header>
-    <div class="header-icons">
+    <div class="header__icons container">
       <router-link to="/" class="logo-container">
-        <LogoIcon class="logo-icon" />
+        <LogoIcon class="header__icons__logo" />
       </router-link>
-      <router-link to="/cart">
-        <CartIcon class="cart-icon" />
-      </router-link>
+      <div>
+        <router-link to="/signin">
+          <UserIcon class="header__icons__user" />
+        </router-link>
+        <router-link to="/cart">
+          <CartIcon class="header__icons__cart" />
+        </router-link>
+      </div>
     </div>
-    <nav>
-      <ul class="navigation">
-        <li><router-link to="/">Home</router-link></li>
-        <li>
-          <router-link to="/shop">Shop</router-link>
-        </li>
-        <li><router-link to="/about">About</router-link></li>
-      </ul>
-    </nav>
   </header>
+  <nav>
+    <ul class="navigation__list">
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/shop">Shop</router-link></li>
+      <li><router-link to="/about">About</router-link></li>
+    </ul>
+  </nav>
   <button @click="handleSignOut">sign out</button>
   <span v-if="user">{{ user.email }}</span>
 </template>
@@ -26,6 +29,7 @@
 // Element.getBoundingClientRect()
 import LogoIcon from '@imgs/svg/logo-icon.svg';
 import CartIcon from '@imgs/svg/cart-icon.svg';
+import UserIcon from '@imgs/svg/user-icon.svg';
 import firebase from 'firebase/compat/app'; //v9
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
@@ -40,7 +44,7 @@ const handleSignOut = () => {
   store.commit('setUser', null);
   localStorage.removeItem('user');
   console.log(store.state.user);
-  router.push('/signin');
+  router.push('/signin'); //go to home
 };
 
 const user = computed(() => store.state.user);
@@ -57,9 +61,9 @@ header {
   background-color: #ffffff;
   filter: drop-shadow(0px 3px 6px rgb(83, 177, 117, 0.1));
 }
-.header-icons {
+.header__icons {
   height: 60px;
-  padding: 15px 25px;
+  padding: 15px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,24 +72,23 @@ header {
   display: block;
   height: 30px;
 }
-.logo-icon {
+.header__icons__logo {
   height: 100%;
 }
-.cart-icon {
-  height: 24.61;
+.header__icons__cart {
+  height: 25px;
+}
+.header__icons__user {
+  margin-right: 15px;
 }
 nav {
   height: 30px;
-  padding: 0 25px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* .navigation {
-  display: flex;
-} */
-.navigation {
+.navigation__list {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -104,37 +107,45 @@ a:hover {
   cursor: pointer;
 }
 button {
+  padding: 0px;
   background: none;
   border: none;
+  height: 25px;
 }
 button:hover {
   cursor: pointer;
 }
-@media (min-width: 992px) {
+@media (min-width: 48rem) {
   header {
     height: 100px;
-    padding: 30px 240px;
   }
-  .logo-icon {
-    height: 40px;
+  .header__icons {
+    height: 100px;
   }
-  .cart-icon {
-    height: 27.61;
+  .header__icons__cart {
+    height: 25px;
   }
-  .header-icons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  li a {
-    font-size: 18px;
-  }
-  .navigation {
-    width: 342px;
+  nav {
+    margin-left: 35vw;
+    width: 300px;
     justify-content: space-evenly;
     position: absolute;
-    top: 38px;
+    top: 35px;
     text-align: center;
+  }
+}
+@media (min-width: 62rem) {
+  nav {
+    margin-left: 45vw;
+    width: 342px;
+  }
+  nav li a {
+    font-size: 18px;
+  }
+}
+@media (min-width: 75rem) {
+  nav {
+    margin-left: calc(100vw * 0.5 - 342px);
   }
 }
 </style>
