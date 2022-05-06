@@ -3,44 +3,7 @@ import { createStore } from 'vuex';
 export default createStore({
   state: {
     counter: 0,
-    cart: [
-      {
-        id: 0,
-        title: 'Natural Red Apple',
-        imgs: [
-          '/src/assets/images/apple.png',
-          '/src/assets/images/apple.png',
-          '/src/assets/images/apple.png',
-        ],
-        price: 4.99,
-        qty: 1,
-        qtyPerPrice: '1kg, Price',
-      },
-      {
-        id: 1,
-        title: 'Organic Bananas',
-        imgs: [
-          '/src/assets/images/banana.png',
-          '/src/assets/images/banana.png',
-          '/src/assets/images/banana.png',
-        ],
-        price: 3.99,
-        qty: 2,
-        qtyPerPrice: '12kg, Price',
-      },
-      {
-        id: 2,
-        title: 'Natural Red Apple',
-        imgs: [
-          '/src/assets/images/apple.png',
-          '/src/assets/images/apple.png',
-          '/src/assets/images/apple.png',
-        ],
-        price: 4.99,
-        qty: 1,
-        qtyPerPrice: '1kg, Price',
-      },
-    ],
+    cart: [],
     categoryName: '',
     filteredCat: '',
     availableCategories: [
@@ -68,31 +31,36 @@ export default createStore({
       const isExist = state.cart.some((item) => item.id === newItem.id);
 
       if (!isExist) {
-        return (state.cart = [...state.cart, newItem]);
+        state.cart = [...state.cart, newItem];
       } else {
-        return (state.cart = [
+        state.cart = [
           ...state.cart.map((item) =>
             item.id === newItem.id
               ? { ...item, qty: item.qty + newItem.qty }
               : item
           ),
-        ]);
+        ];
       }
+
+      return (localStorage.myCart = JSON.stringify(state.cart));
     },
 
     removeItem: (state, itemID) => {
-      return (state.cart = [
-        ...state.cart.filter((item) => item.id !== itemID),
-      ]);
+      state.cart = [...state.cart.filter((item) => item.id !== itemID)];
+
+      return (localStorage.myCart = JSON.stringify(state.cart));
     },
 
     changeQty: (state, { id: itemID, count: itemQty }) => {
-      return (state.cart = [
+      state.cart = [
         ...state.cart.map((item) =>
           item.id === itemID ? { ...item, qty: itemQty } : item
         ),
-      ]);
+      ];
+
+      return (localStorage.myCart = JSON.stringify(state.cart));
     },
+
     setFilteredCat(state, compName) {
       state.filteredCat = compName;
     },

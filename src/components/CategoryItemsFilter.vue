@@ -6,6 +6,8 @@
 
 <script>
 import ItemsListComp from '../components/ItemListComp.vue';
+import DB from '@/db.json';
+
 export default {
   data() {
     return {
@@ -30,16 +32,9 @@ export default {
   },
   methods: {
     getAllCatItems() {
-      fetch('../../db.json')
-        .then((res) => res.json())
-        .then(({ data }) => {
-          this.allCatItems = data.filter(
-            (elem) => elem.category == this.$store.getters.getFilteredCat
-          );
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      this.allCatItems = DB.data.filter(
+        (item) => item.category == this.$store.getters.getFilteredCat
+      );
     },
   },
 };
