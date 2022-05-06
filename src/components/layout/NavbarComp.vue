@@ -8,7 +8,11 @@
         <router-link to="/signin">
           <UserIcon class="header__icons__user" />
         </router-link>
-        <router-link to="/cart">
+        <router-link
+          to="/cart"
+          class="header__cart"
+          :class="{ 'header__cart--active': cartIsNotEmpty }"
+        >
           <CartIcon class="header__icons__cart" />
         </router-link>
       </div>
@@ -33,7 +37,7 @@ import UserIcon from '@imgs/svg/user-icon.svg';
 import firebase from 'firebase/compat/app'; //v9
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
-import { computed } from '@vue/runtime-core';
+import { computed, watch } from 'vue';
 const store = useStore();
 
 const router = useRouter();
@@ -55,8 +59,19 @@ const user = computed(() => store.state.user);
 //     }
 //   });
 // };
+
+const cartIsNotEmpty = computed(() => store.state.cart.length);
+
+watch(
+  () => cartIsNotEmpty.value,
+  (currentValue, newValue) => {
+    if (currentValue !== newValue) {
+      cartIsNotEmpty.value = computed(() => store.state.cart.length);
+    }
+  }
+);
 </script>
-<style lang="css" scoped>
+<style lang="scss" scoped>
 header {
   background-color: #ffffff;
   filter: drop-shadow(0px 3px 6px rgb(83, 177, 117, 0.1));
@@ -146,6 +161,27 @@ button:hover {
 @media (min-width: 75rem) {
   nav {
     margin-left: calc(100vw * 0.5 - 342px);
+  }
+}
+
+.header__cart {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -0.2rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: rgb(var(--clr-primary));
+    border: 1px solid rgb(var(--clr-white));
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+  }
+
+  &--active::before {
+    opacity: 1;
   }
 }
 </style>
