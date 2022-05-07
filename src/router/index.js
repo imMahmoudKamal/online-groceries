@@ -12,11 +12,6 @@ const router = createRouter({
       component: () => import('../views/HomeView.vue'),
     },
     {
-      path: '/vuexexample',
-      name: 'vuex',
-      component: () => import('../views/VuexExample.vue'),
-    },
-    {
       path: '/shop',
       name: 'Shop',
       component: Shop,
@@ -45,9 +40,10 @@ const router = createRouter({
       },
     },
     {
-      path: '/shop/:cartName',
+      path: '/shop/:category',
       name: 'CartDetails',
       component: () => import('../views/CatDetailsView.vue'),
+      props: true,
     },
     {
       path: '/:category/:itemID',

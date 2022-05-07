@@ -139,7 +139,7 @@
         "https://w7.pngwing.com/pngs/1001/506/png-transparent-slices-of-oranges-orange-juice-flavor-fruit-nutritious-orange-natural-foods-food-orange.png"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "ranges are a type of low calorie, highly nutritious citrus fruit. As part of a healthful and varied diet, oranges contribute to strong, clear skin "
     },
     {
@@ -152,7 +152,7 @@
         "https://img.lovepik.com/free-png/20211213/lovepik-banana-png-image_401551780_wh1200.png"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa "
     },
     {
@@ -165,7 +165,7 @@
         "https://1.bp.blogspot.com/-sA_gUkzufeM/X6l59xMfZqI/AAAAAAAAAlY/LIp-qdDsdOQmDvQ8GYbJiWjn57smuOqHgCLcBGAsYHQ/s905/thumb_apple.png"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "An apple is an edible fruit produced by an apple tree. Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus "
     },
     {
@@ -178,7 +178,7 @@
         "https://e7.pngegg.com/pngimages/983/762/png-clipart-strawberry-fruit-strawberry.png"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "Strawberry - Wikipediahttps://en.wikipedia.org › wiki › Strawberry The garden strawberry is a widely grown hybrid species of the genus Fragaria, collectively known as the strawberries,"
     },
     {
@@ -191,7 +191,7 @@
         "https://e7.pngegg.com/pngimages/139/543/png-clipart-melon-fruit-cucumber-melon-food-melon.png"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "The watermelon is a member of the cucumber family known as the Cucurbitaceae, which includes gourds as well. T"
     },
     {
@@ -204,7 +204,7 @@
         "data:image/jpeg;base64,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"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "tomato is the edible berry of the plant Solanum lycopersicum, commonly known as the tomato plant"
     },
     {
@@ -217,7 +217,7 @@
         "https://purepng.com/public/uploads/large/purepng.com-eggplanteggplantpurple-egg-shaped-fruitdark-purple-17015272552215iegw.png"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "Eggplant, aubergine or brinjal is a plant species in the nightshade family Solanaceae. Solanum melongena is grown worldwide for its edible fruit. Most commonly purple, the spongy"
     },
     {
@@ -230,7 +230,7 @@
         "https://e7.pngegg.com/pngimages/488/828/png-clipart-broccoli-superfood-concept-evergreen-broccoli-leaf-vegetable-food.png"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "Broccoli is an edible green plant in the cabbage family whose large flowering head, stalk and small associated leaves are eaten as a vegetable. Broccoli is classified in the Italica cultivar group of the species Brassica oleracea"
     },
     {
@@ -243,7 +243,7 @@
         "https://img.pngio.com/vegetables-fruits-and-vegetables-vegetables-pea-png-image-and-clipart-vegetable-png-650_498.png"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "The pea is most commonly the small spherical seed or the seed-pod of the pod fruit Pisum sativum. Each pod contains several peas, which can be green or yellow. Botanically, pea pods are fruit, since they contain seeds and develop from the ovary of a flower"
     },
     {
@@ -256,7 +256,7 @@
         "https://www.pngkit.com/png/full/972-9722746_carrot-1-kg-gajar-vegetable.png"
       ],
       "nutrition": "100 ml ",
-      "category": "fruits & vegetable",
+      "category": "fruits_vegetable",
       "description": "The carrot is a root vegetable, typically orange in color, though purple, black, red, white, and yellow cultivars exist, all of which are domesticated forms of the wild carrot, Daucus carota, native to Europe and Southwestern Asia"
     },
     {
@@ -269,7 +269,7 @@
         "https://image.similarpng.com/very-thumbnail/2020/09/Raw-beef-meat-with-herbs-on-transparent-background-PNG.png"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "Raw meat with herbs and spices featuring meat, raw, and beef "
     },
     {
@@ -282,7 +282,7 @@
         "https://www.pngitem.com/pimgs/m/190-1900728_animal-fat-turkey-meat-chicken-breast-chicken-meat.png"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "fresh chicken wih high quality  "
     },
     {
@@ -295,7 +295,7 @@
         "https://nypost.com/wp-content/uploads/sites/2/2019/03/salmon.jpg?quality=75&strip=all"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "frozen salmon ,The Atlantic salmon (Salmo salar) is a species of ray-finned fish in the family Salmonidae. It is the 3rd largest of the Salmonidae, behind Siberian Taime "
     },
     {
@@ -308,7 +308,7 @@
         "https://harborfish.com/wp-content/uploads/2017/05/Salmon2.jpeg"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "frozen fish "
     },
     {
@@ -321,7 +321,7 @@
         "https://harborfish.com/wp-content/uploads/2017/05/Salmon2.jpeg"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "frozen fish "
     },
     {
@@ -334,7 +334,7 @@
         "https://harborfish.com/wp-content/uploads/2017/05/Salmon2.jpeg"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "frozen fish "
     },
     {
@@ -347,7 +347,7 @@
         "https://harborfish.com/wp-content/uploads/2017/05/Salmon2.jpeg"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "frozen fish "
     },
     {
@@ -360,7 +360,7 @@
         "https://image.similarpng.com/very-thumbnail/2020/09/Raw-beef-meat-with-herbs-on-transparent-background-PNG.png"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "Raw meat with herbs and spices featuring meat, raw, and beef "
     },
     {
@@ -373,7 +373,7 @@
         "https://image.similarpng.com/very-thumbnail/2020/09/Raw-beef-meat-with-herbs-on-transparent-background-PNG.png"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "Raw meat with herbs and spices featuring meat, raw, and beef "
     },
     {
@@ -386,7 +386,7 @@
         "https://image.similarpng.com/very-thumbnail/2020/09/Raw-beef-meat-with-herbs-on-transparent-background-PNG.png"
       ],
       "nutrition": "100 ml ",
-      "category": "meat & fish",
+      "category": "meat",
       "description": "Raw meat with herbs and spices featuring meat, raw, and beef "
     },
     {
@@ -399,7 +399,7 @@
         "https://images.nana.sa/pics/f3b8dd1d82bcf01b0628e9009c3f3313f08bc1cb-01==h600=w600.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "cooking oil & ghee",
+      "category": "oil_ghee",
       "description": "pure cooking oil  "
     },
     {
@@ -412,7 +412,7 @@
         "https://images.deliveryhero.io/image/darkstores-eg/EGY_6222000505291.PNG"
       ],
       "nutrition": "100 ml ",
-      "category": "cooking oil & ghee",
+      "category": "oil_ghee",
       "description": "pure cooking oil  "
     },
     {
@@ -425,7 +425,7 @@
         "https://images.nana.sa/pics/f3b8dd1d82bcf01b0628e9009c3f3313f08bc1cb-01==h600=w600.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "cooking oil & ghee",
+      "category": "oil_ghee",
       "description": "pure cooking oil  "
     },
     {
@@ -438,7 +438,7 @@
         "https://images.deliveryhero.io/image/darkstores-eg/EGY_6222000505291.PNG"
       ],
       "nutrition": "100 ml ",
-      "category": "cooking oil & ghee",
+      "category": "oil_ghee",
       "description": "pure cooking oil  "
     },
     {
@@ -451,7 +451,7 @@
         "https://images.nana.sa/pics/f3b8dd1d82bcf01b0628e9009c3f3313f08bc1cb-01==h600=w600.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "cooking oil & ghee",
+      "category": "oil_ghee",
       "description": "pure cooking oil  "
     },
     {
@@ -464,7 +464,7 @@
         "https://images.deliveryhero.io/image/darkstores-eg/EGY_6222000505291.PNG"
       ],
       "nutrition": "100 ml ",
-      "category": "cooking oil & ghee",
+      "category": "oil_ghee",
       "description": "pure cooking oil  "
     },
     {
@@ -477,7 +477,7 @@
         "https://images.nana.sa/pics/f3b8dd1d82bcf01b0628e9009c3f3313f08bc1cb-01==h600=w600.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "cooking oil & ghee",
+      "category": "oil_ghee",
       "description": "pure cooking oil  "
     },
     {
@@ -490,7 +490,7 @@
         "https://images.deliveryhero.io/image/darkstores-eg/EGY_6222000505291.PNG"
       ],
       "nutrition": "100 ml ",
-      "category": "cooking oil & ghee",
+      "category": "oil_ghee",
       "description": "pure cooking oil  "
     },
     {
@@ -503,7 +503,7 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbIubTK5xGDla_AlBPuh5FhuuRG7rMPimrJhd0BrsXRsc83K9eSk9oPbocwUQ0lj9wI6Q&usqp=CAU"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -516,7 +516,7 @@
         "https://previews.123rf.com/images/belchonock/belchonock1908/belchonock190816912/128985236-fresh-breads-and-pastry-as-background-top-view.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -529,7 +529,7 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbIubTK5xGDla_AlBPuh5FhuuRG7rMPimrJhd0BrsXRsc83K9eSk9oPbocwUQ0lj9wI6Q&usqp=CAU"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -542,7 +542,7 @@
         "https://previews.123rf.com/images/belchonock/belchonock1908/belchonock190816912/128985236-fresh-breads-and-pastry-as-background-top-view.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -555,7 +555,7 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbIubTK5xGDla_AlBPuh5FhuuRG7rMPimrJhd0BrsXRsc83K9eSk9oPbocwUQ0lj9wI6Q&usqp=CAU"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -568,7 +568,7 @@
         "https://previews.123rf.com/images/belchonock/belchonock1908/belchonock190816912/128985236-fresh-breads-and-pastry-as-background-top-view.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -581,7 +581,7 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbIubTK5xGDla_AlBPuh5FhuuRG7rMPimrJhd0BrsXRsc83K9eSk9oPbocwUQ0lj9wI6Q&usqp=CAU"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -594,7 +594,7 @@
         "https://previews.123rf.com/images/belchonock/belchonock1908/belchonock190816912/128985236-fresh-breads-and-pastry-as-background-top-view.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -607,7 +607,7 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbIubTK5xGDla_AlBPuh5FhuuRG7rMPimrJhd0BrsXRsc83K9eSk9oPbocwUQ0lj9wI6Q&usqp=CAU"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -620,7 +620,7 @@
         "https://previews.123rf.com/images/belchonock/belchonock1908/belchonock190816912/128985236-fresh-breads-and-pastry-as-background-top-view.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "bakery & snacks",
+      "category": "bakery",
       "description": "fresh backed bread "
     },
     {
@@ -633,7 +633,7 @@
         "https://images.theconversation.com/files/372017/original/file-20201130-21-zuzh18.jpg?ixlib=rb-1.1.0&rect=44%2C8%2C5852%2C3925&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": "eggs  "
     },
     {
@@ -646,7 +646,7 @@
         "https://spinneys-egypt.com/cache/large/product/27397/1udYQrdWxbJspaYMa3mxZogReqZ86IaEjEAKlbzh.jpeg"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": " fresh milk   "
     },
     {
@@ -659,7 +659,7 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRskMUzSf_fPn_tm8inth2lDkty6oh2EVTpnG3zi8vzl_riNOjXMkEMKvQpE-LO4A8MaS8&usqp=CAU"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": " fresh milk   "
     },
     {
@@ -672,7 +672,7 @@
         "https://images.theconversation.com/files/372017/original/file-20201130-21-zuzh18.jpg?ixlib=rb-1.1.0&rect=44%2C8%2C5852%2C3925&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": "eggs  "
     },
     {
@@ -685,7 +685,7 @@
         "https://spinneys-egypt.com/cache/large/product/27397/1udYQrdWxbJspaYMa3mxZogReqZ86IaEjEAKlbzh.jpeg"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": " fresh milk   "
     },
     {
@@ -698,7 +698,7 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRskMUzSf_fPn_tm8inth2lDkty6oh2EVTpnG3zi8vzl_riNOjXMkEMKvQpE-LO4A8MaS8&usqp=CAU"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": " fresh milk   "
     },
     {
@@ -711,7 +711,7 @@
         "https://images.theconversation.com/files/372017/original/file-20201130-21-zuzh18.jpg?ixlib=rb-1.1.0&rect=44%2C8%2C5852%2C3925&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": "eggs  "
     },
     {
@@ -724,7 +724,7 @@
         "https://spinneys-egypt.com/cache/large/product/27397/1udYQrdWxbJspaYMa3mxZogReqZ86IaEjEAKlbzh.jpeg"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": " fresh milk   "
     },
     {
@@ -737,7 +737,7 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRskMUzSf_fPn_tm8inth2lDkty6oh2EVTpnG3zi8vzl_riNOjXMkEMKvQpE-LO4A8MaS8&usqp=CAU"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": " fresh milk   "
     },
     {
@@ -750,7 +750,7 @@
         "https://images.theconversation.com/files/372017/original/file-20201130-21-zuzh18.jpg?ixlib=rb-1.1.0&rect=44%2C8%2C5852%2C3925&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": "eggs  "
     },
     {
@@ -763,7 +763,7 @@
         "https://spinneys-egypt.com/cache/large/product/27397/1udYQrdWxbJspaYMa3mxZogReqZ86IaEjEAKlbzh.jpeg"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": " fresh milk   "
     },
     {
@@ -776,7 +776,7 @@
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRskMUzSf_fPn_tm8inth2lDkty6oh2EVTpnG3zi8vzl_riNOjXMkEMKvQpE-LO4A8MaS8&usqp=CAU"
       ],
       "nutrition": "100 ml ",
-      "category": "dairy & eggs",
+      "category": "dairy_eggs",
       "description": " fresh milk   "
     },
     {
@@ -789,7 +789,7 @@
         "https://media.nisbets.com/asset/core/prodimage/large_new/sa460_square.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "crockery & cutlery",
+      "category": "crockery_cutlery",
       "description": " original Crockery  "
     },
     {
@@ -802,7 +802,7 @@
         "https://img.weyesimg.com/collection/0d9e58c2aa770d2b384022fb4e3846cb/71540185955f8c144fd05e481e038067.jpg?imageView2/2/w/800/q/100"
       ],
       "nutrition": "100 ml ",
-      "category": "crockery & cutlery",
+      "category": "crockery_cutlery",
       "description": " original plates  "
     },
     {
@@ -815,7 +815,7 @@
         "https://www.ubuy.co.in/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzEwZ2I1Z1hOZlMuX0FDX1NMMTUwMF8uanBn.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "crockery & cutlery",
+      "category": "crockery_cutlery",
       "description": " originalmugs  "
     },
     {
@@ -828,7 +828,7 @@
         "https://media.nisbets.com/asset/core/prodimage/large_new/sa460_square.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "crockery & cutlery",
+      "category": "crockery_cutlery",
       "description": " original Crockery  "
     },
     {
@@ -841,7 +841,7 @@
         "https://img.weyesimg.com/collection/0d9e58c2aa770d2b384022fb4e3846cb/71540185955f8c144fd05e481e038067.jpg?imageView2/2/w/800/q/100"
       ],
       "nutrition": "100 ml ",
-      "category": "crockery & cutlery",
+      "category": "crockery_cutlery",
       "description": " original plates  "
     },
     {
@@ -854,7 +854,7 @@
         "https://www.ubuy.co.in/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzEwZ2I1Z1hOZlMuX0FDX1NMMTUwMF8uanBn.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "crockery & cutlery",
+      "category": "crockery_cutlery",
       "description": " originalmugs  "
     },
     {
@@ -867,7 +867,7 @@
         "https://media.nisbets.com/asset/core/prodimage/large_new/sa460_square.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "crockery & cutlery",
+      "category": "crockery_cutlery",
       "description": " original Crockery  "
     },
     {
@@ -880,7 +880,7 @@
         "https://img.weyesimg.com/collection/0d9e58c2aa770d2b384022fb4e3846cb/71540185955f8c144fd05e481e038067.jpg?imageView2/2/w/800/q/100"
       ],
       "nutrition": "100 ml ",
-      "category": "crockery & cutlery",
+      "category": "crockery_cutlery",
       "description": " original plates  "
     },
     {
@@ -893,7 +893,7 @@
         "https://www.ubuy.co.in/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzEwZ2I1Z1hOZlMuX0FDX1NMMTUwMF8uanBn.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "crockery & cutlery",
+      "category": "crockery_cutlery",
       "description": " originalmugs  "
     },
     {
@@ -906,7 +906,7 @@
         "https://www.itloblena.com/wp-content/uploads/2021/04/UTB8mlxmqf2JXKJkSanrq6y3lVXa0.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays Snakes "
     },
     {
@@ -919,7 +919,7 @@
         "https://www.osmanmarket.app/us/136/pidwebp600/3498/f132874148657867222284-1.webp"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays chipsy "
     },
     {
@@ -932,7 +932,7 @@
         "https://www.itloblena.com/wp-content/uploads/2021/04/UTB8mlxmqf2JXKJkSanrq6y3lVXa0.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays Snakes "
     },
     {
@@ -945,7 +945,7 @@
         "https://www.osmanmarket.app/us/136/pidwebp600/3498/f132874148657867222284-1.webp"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays chipsy "
     },
     {
@@ -958,7 +958,7 @@
         "https://www.itloblena.com/wp-content/uploads/2021/04/UTB8mlxmqf2JXKJkSanrq6y3lVXa0.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays Snakes "
     },
     {
@@ -971,7 +971,7 @@
         "https://www.osmanmarket.app/us/136/pidwebp600/3498/f132874148657867222284-1.webp"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays chipsy "
     },
     {
@@ -984,7 +984,7 @@
         "https://www.itloblena.com/wp-content/uploads/2021/04/UTB8mlxmqf2JXKJkSanrq6y3lVXa0.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays Snakes "
     },
     {
@@ -997,7 +997,7 @@
         "https://www.osmanmarket.app/us/136/pidwebp600/3498/f132874148657867222284-1.webp"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays chipsy "
     },
     {
@@ -1010,7 +1010,7 @@
         "https://www.itloblena.com/wp-content/uploads/2021/04/UTB8mlxmqf2JXKJkSanrq6y3lVXa0.jpg"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays Snakes "
     },
     {
@@ -1023,7 +1023,7 @@
         "https://www.osmanmarket.app/us/136/pidwebp600/3498/f132874148657867222284-1.webp"
       ],
       "nutrition": "100 ml ",
-      "category": "snakes & branded foods",
+      "category": "snakes",
       "description": " lays chipsy "
     }
   ],
@@ -1107,60 +1107,60 @@
   ],
   "categoriesInfo": [
     {
-      "Name": "fruits & vegetable",
+      "id": "fruits_vegetable",
       "ImagURL": "https://i.postimg.cc/FR8bBDjF/fruits-vegetables.png",
       "BackgroundColor": "rgb(var(--clr-primary) / 10%)",
       "Border": "1px solid rgb(var(--clr-primary) / 70%)",
-      "catName": "fruitsVegetables"
+      "Name": "fruits & Vegetables"
     },
     {
-      "Name": "cooking oil & ghee",
+      "id": "oil_ghee",
       "ImagURL": "https://i.postimg.cc/NFtFFXt7/Oil.png",
       "BackgroundColor": "rgb(var(--clr-orange) / 10%)",
       "Border": "1px solid rgb(var(--clr-orange) / 70%)",
-      "catName": "oilGhee"
+      "Name": "oil & Ghee"
     },
     {
-      "Name": "meat & fish",
+      "id": "meat",
       "ImagURL": "https://i.postimg.cc/sDV1R5w3/Meat.png",
       "BackgroundColor": "rgb(var( --clr-pink) / 10%)",
       "Border": "1px solid rgb(var( --clr-pink) / 70%)",
-      "catName": "meatFish"
+      "Name": "meat & Fish"
     },
     {
-      "Name": "bakery & snacks",
+      "id": "bakery",
       "ImagURL": "https://i.postimg.cc/13dz62Pz/Bakery.png",
       "BackgroundColor": "rgb(var( --clr-purple) / 10%)",
       "Border": "1px solid rgb(var( --clr-purple) / 70%)",
-      "catName": "bakerySnacks"
+      "Name": "bakery & Snacks"
     },
     {
-      "Name": "dairy & eggs",
+      "id": "dairy_eggs",
       "ImagURL": "https://i.postimg.cc/gJFkthxF/Dairy-Eggs.png",
       "BackgroundColor": "rgb(var( --clr-yellow) / 10%)",
       "Border": "1px solid rgb(var( --clr-yellow) / 70%)",
-      "catName": "dairyEggs"
+      "Name": "dairy & Eggs"
     },
     {
-      "Name": "beverages",
+      "id": "beverages",
       "ImagURL": "https://i.postimg.cc/prkWd1qR/beverages.png",
       "BackgroundColor": "rgb(var( --clr-babyBlue) / 10%)",
       "Border": "1px solid rgb(var( --clr-babyBlue) / 70%)",
-      "catName": "beverages"
+      "Name": "beverages"
     },
     {
-      "Name": "crockery & cutlery",
+      "id": "crockery_cutlery",
       "ImagURL": "https://i.postimg.cc/5N79dTXm/Crockery.png",
       "BackgroundColor": "rgb(var(--clr-primary) / 10%)",
       "Border": "1px solid rgb(var(--clr-primary) / 70%)",
-      "catName": "CrockeryCutlery"
+      "Name": "Crockery & Cutlery"
     },
     {
-      "Name": "snakes & branded foods",
+      "id": "snakes",
       "ImagURL": "https://i.postimg.cc/FHYr9pcX/snakes.png",
       "BackgroundColor": "rgb(var(--clr-orange) / 10%)",
       "Border": "1px solid rgb(var(--clr-orange) / 70%)",
-      "catName": "SnakesBranded"
+      "Name": "Snakes & Branded Food"
     }
   ]
 }

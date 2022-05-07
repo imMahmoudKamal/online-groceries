@@ -3,22 +3,33 @@
     <ul class="nav__list" ref="lisItems">
       <li
         class="nav__item nav__active"
-        ref="itemActive"
-        @click="setActive('itemActive')"
+        @click="
+          (event) =>
+            setActive(
+              event,
+              this.navbarCategories.find(
+                (category) => category.id === this.activeCat
+              ).id
+            )
+        "
       >
-        {{ this.$store.getters.getCategoryName }}
+        {{
+          this.navbarCategories.find(
+            (category) => category.id === this.activeCat
+          ).Name
+        }}
       </li>
 
       <li
         class="nav__item"
-        v-for="item in this.$store.getters.getShowList"
-        :key="item"
-        :ref="`item${this.$store.state.availableCategories.indexOf(item)}`"
-        @click="setActive(this.$store.state.availableCategories.indexOf(item))"
+        v-for="category in this.getShowList()"
+        :key="category.id"
+        @click="(event) => setActive(event, category.id)"
       >
-        {{ item }}
+        {{ category.Name }}
       </li>
 
+      <!-- more button  -->
       <li class="nav__item" @click="toggleArrowIcon">
         more
         <span class="nav__icon">
@@ -28,13 +39,12 @@
 
       <li
         class="nav__item"
-        v-for="item in this.$store.getters.getHideList"
+        v-for="category in this.getHideList()"
         :class="[showHiddenList ? 'listShow' : 'listHide']"
-        :key="item"
-        :ref="`item${this.$store.state.availableCategories.indexOf(item)}`"
-        @click="setActive(this.$store.state.availableCategories.indexOf(item))"
+        :key="category.id"
+        @click="(event) => setActive(event, category.id)"
       >
-        {{ item }}
+        {{ category.Name }}
       </li>
     </ul>
   </nav>
@@ -43,8 +53,10 @@
 <script>
 import upArrow from '../assets/images/svg/up-arrow.svg';
 import downArrow from '../assets/images/svg/down-arrow.svg';
+import DB from '@/db.json';
 
 export default {
+  props: ['activeCategory'],
   data() {
     return {
       listIndex: '',
@@ -52,9 +64,13 @@ export default {
       componentName: downArrow,
       showHiddenList: false,
       isActive: true,
-      activeCat: '',
+      activeCat: this.activeCategory,
+      navbarCategories: DB.categoriesInfo,
+      index: null,
+      activeItem: null,
     };
   },
+
   components: {
     upArrow,
     downArrow,
@@ -70,34 +86,66 @@ export default {
         this.componentName = upArrow;
       }
     },
-    myEventHandler(e) {
-      this.$store.commit('setWindowSize', e.currentTarget.innerWidth);
-      this.$store.commit('setListIndex');
+
+    setActive(event, id) {
+      this.$refs['lisItems'].querySelectorAll('li').forEach((listItem) => {
+        listItem.classList.remove('nav__active');
+      });
+
+      event.target.classList.add('nav__active');
+      this.activeItem = event.target.innerText;
+      this.$router.push({ path: id });
     },
-    setActive(item) {
-      for (let i = 0; i <= this.$store.state.availableCategories.length; i++) {
-        this.$refs['lisItems'].children[i].classList.remove('nav__active');
-      }
-      if (item == 'itemActive') {
-        this.$refs[`itemActive`].classList.add('nav__active');
-        let catName = this.$refs[`itemActive`].innerText.toLowerCase();
-        this.$router.push(`/shop/${catName}`);
-        this.$store.commit('setFilteredCat', catName);
+
+    setListIndex(event) {
+      let width = event ? event.currentTarget.innerWidth : window.innerWidth;
+      let resultIndex;
+      if (width >= 368 && width < 768) {
+        resultIndex = 1;
+      } else if (width >= 768 && width < 992) {
+        resultIndex = 2;
+      } else if (width >= 992 && width < 1200) {
+        resultIndex = 3;
       } else {
-        this.$refs[`item${item}`][0].classList.add('nav__active');
-        let catName2 = this.$refs[`item${item}`][0].innerText.toLowerCase();
-        this.$router.push(`/shop/${catName2}`);
-        this.$store.commit('setFilteredCat', catName2);
+        resultIndex = 4;
       }
+      this.index = resultIndex;
+
+      this.$refs['lisItems']?.querySelectorAll('li').forEach((listItem) => {
+        if (listItem.innerText === this.activeItem) {
+          listItem.classList.add('nav__active');
+        }
+      });
+    },
+
+    getShowList() {
+      // return all not active category
+      const allCategories = this.navbarCategories.filter(
+        (category) => category.id !== this.activeCat
+      );
+
+      // return before more btn
+      return allCategories.filter((c, index) => index < this.index);
+    },
+
+    getHideList() {
+      // return all not active category
+      const allCategories = this.navbarCategories.filter(
+        (category) => category.id !== this.activeCat
+      );
+
+      // return before more btn
+      return allCategories.filter((c, index) => index >= this.index);
     },
   },
+
   created() {
-    this.$store.commit('setWindowSize', window.innerWidth);
-    this.$store.commit('setListIndex');
-    window.addEventListener('resize', this.myEventHandler);
+    this.setListIndex();
+    window.addEventListener('resize', this.setListIndex);
   },
+
   unmounted() {
-    window.removeEventListener('resize', this.myEventHandler);
+    window.removeEventListener('resize', this.setListIndex);
   },
 };
 </script>
