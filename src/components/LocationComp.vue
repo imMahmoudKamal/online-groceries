@@ -1,7 +1,5 @@
 <template>
   <div class="parent">
-    <h2>Location</h2>
-    <div class="line"></div>
     <div class="parent__main">
       <p class="main__one">
         Nectar Headquarters 1145 17th Street NW Washington, DC 20036
@@ -75,6 +73,7 @@
 
   & .main__image {
     width: 250px;
+    border-radius: 18px;
   }
   @media (min-width: 576px) and (max-width: 768px) {
     & .main__one {

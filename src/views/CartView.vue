@@ -124,10 +124,13 @@
 import ItemCountComp from '../components/ItemCountComp.vue';
 import AcceptedOrderComp from '../components/AcceptedOrderComp.vue';
 import PlusIcon from '@imgs/svg/plus.svg';
+import firebase from 'firebase/compat/app'; //v9
 
+import { useRouter } from 'vue-router';
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
 const store = useStore();
+const router = useRouter();
 
 const cartItems = computed(() => {
   return store.state.cart;
@@ -155,10 +158,22 @@ function itemCount(count, id) {
   store.commit('changeQty', { id, count });
 }
 
+const getCurrentUser = () => {
+  return new Promise((reslove, reject) => {
+    const removeListener = firebase.auth().onAuthStateChanged((user) => {
+      removeListener();
+      reslove(user);
+    }, reject);
+  });
+};
+
 const orderActive = ref(false);
-function cartCheckout() {
-  // console.log('YES');
+async function cartCheckout() {
   orderActive.value = true;
+  const user = await getCurrentUser();
+  if (!user) {
+    router.push('/signin');
+  }
 }
 </script>
 

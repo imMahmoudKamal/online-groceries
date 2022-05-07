@@ -8,13 +8,17 @@
     :navigation="true"
     class="slider"
   >
-    <div class="slider__bg" data-swiper-parallax="-10%" />
+    <!-- <div class="slider__bg" data-swiper-parallax="-10%" /> -->
 
     <swiper-slide
       class="slider__slide"
-      v-for="({ title, titleLight, subTitle, text, link }, index) of slides"
+      v-for="(
+        { title, titleLight, subTitle, text, link, imgURL }, index
+      ) of slides"
       :key="index"
     >
+      <img class="slider__slide__img" :src="imgURL" :alt="title" />
+
       <h1 class="slider__slide__title" data-swiper-parallax="-300">
         {{ title }}
         <span class="slider__slide__title__light" v-if="titleLight">
@@ -44,33 +48,36 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import SwiperCore, { Parallax, Pagination, Navigation } from 'swiper/core';
-SwiperCore.use([Parallax, Pagination, Navigation]);
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+SwiperCore.use([Parallax, Pagination, Navigation]);
 
 const slides = [
   {
-    title: 'Fresh and Healthy Veggies',
+    title: 'Fruits & Vegetables',
     titleLight: 'Organic Market',
     subTitle: 'ALL NATURAL PRODUCTS',
     text: 'Orgainc food is food produced by methods that comply the standard of farming.',
-    link: '/',
+    link: `/shop/fruits%20&%20vegetable`,
+    imgURL: 'https://i.postimg.cc/MT3nfggM/slider.jpg',
   },
   {
-    title: 'Fresh and Healthy Veggies',
+    title: 'Meat and Fish',
     titleLight: 'Organic Market',
     subTitle: 'ALL NATURAL PRODUCTS',
     text: 'Orgainc food is food produced by methods that comply the standard of farming.',
-    link: '/',
+    link: '/shop/meat%20&%20fish',
+    imgURL:
+      'https://www.safefood.net/getmedia/c5e264c1-dfce-4cac-ae58-244831336cc8/protein.jpg?w=2000&h=1333&ext=.jpg&width=1360&resizemode=force',
   },
   {
-    title: 'Fresh and Healthy Veggies',
+    title: 'Beverages',
     titleLight: 'Organic Market',
     subTitle: 'ALL NATURAL PRODUCTS',
     text: 'Orgainc food is food produced by methods that comply the standard of farming.',
-    link: '/',
+    link: '/shop/beverages',
+    imgURL: 'http://openmart.online/uploads/category/164947912178.jpeg',
   },
 ];
 </script>
@@ -85,35 +92,38 @@ const slides = [
     0 0 0 1px rgb(var(--clr-primary) / 10%);
   position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      0,
-      rgb(var(--clr-white) / 100%) -50%,
-      transparent
-    );
-    z-index: 1;
-  }
-
-  &__bg {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -10%;
-    right: -20%;
-    background-size: cover;
-    background-image: url('@imgs/slider.jpg');
-    background-position: center bottom;
-  }
-
   &__slide {
     padding: 0 1.5rem 3.25rem;
     line-height: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0,
+        rgb(var(--clr-white) / 100%) -50%,
+        transparent
+      );
+      z-index: 1;
+    }
+
+    & > *:not(&__img) {
+      z-index: 2;
+      position: relative;
+    }
+
+    &__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     &__subtitle,
     &__title {
@@ -144,7 +154,7 @@ const slides = [
     &__text {
       font-weight: 500;
       font-size: 0.6rem;
-      color: rgb(var(--clr-neutral-600));
+      color: rgb(var(--clr-neutral-900) / 90%);
     }
 
     &__cta {
@@ -168,7 +178,7 @@ const slides = [
   }
 
   @media (min-width: 48rem) {
-    &::before {
+    &__slide::before {
       background: linear-gradient(
         90deg,
         rgb(var(--clr-white) / 100%) -50%,

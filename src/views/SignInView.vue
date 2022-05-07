@@ -21,7 +21,7 @@
         <label for="password">password</label>
         <input
           type="password"
-          placeholder="Enter your Email"
+          placeholder="Enter your Password"
           name="password"
           class="input-btn"
           v-model="password"
@@ -67,7 +67,7 @@ const handleForm = async () => {
       store.commit('setUser', res.user);
       console.log(store.state.user);
     }
-    router.push('/');
+    router.go(-1);
   } catch (err) {
     error.value = 'invalid password or email';
   }
