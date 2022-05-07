@@ -59,7 +59,7 @@ const slides = [
     titleLight: 'Organic Market',
     subTitle: 'ALL NATURAL PRODUCTS',
     text: 'Orgainc food is food produced by methods that comply the standard of farming.',
-    link: `/shop/fruits%20&%20vegetable`,
+    link: `/shop/fruits_vegetable`,
     imgURL: 'https://i.postimg.cc/MT3nfggM/slider.jpg',
   },
   {
@@ -67,7 +67,7 @@ const slides = [
     titleLight: 'Organic Market',
     subTitle: 'ALL NATURAL PRODUCTS',
     text: 'Orgainc food is food produced by methods that comply the standard of farming.',
-    link: '/shop/meat%20&%20fish',
+    link: '/shop/meat',
     imgURL:
       'https://www.safefood.net/getmedia/c5e264c1-dfce-4cac-ae58-244831336cc8/protein.jpg?w=2000&h=1333&ext=.jpg&width=1360&resizemode=force',
   },

@@ -6,6 +6,11 @@ body {
   background-color: rgb(var(--clr-white));
   color: rgb(var(--clr-neutral-900));
   -webkit-tap-highlight-color: transparent;
+  padding-top: 90px;
+
+  @media (min-width: 48rem) {
+    padding-top: 100px;
+  }
 }
 
 .container {
