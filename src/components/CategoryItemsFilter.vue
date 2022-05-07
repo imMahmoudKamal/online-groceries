@@ -18,13 +18,20 @@ export default {
   created() {
     if (
       this.$store.getters.getFilteredCat == '' ||
-      this.$store.getters.getCategoryName == ''
+      this.$store.getters.getCategoryName == '' ||
+      this.$store.state.activeCategory == ''
     ) {
       this.$store.commit('setFilteredCat', 'beverages');
       this.$store.commit('setCategoryName', 'beverages');
+      this.$store.commit('setActiveCategory', 'beverages');
+      this.$router.push(`/shop/beverages`);
+    } else {
+      this.$store.commit('setFilteredCat', this.$route.params.cartName);
     }
+
     this.getAllCatItems();
   },
+
   watch: {
     $route() {
       this.getAllCatItems();

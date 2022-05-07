@@ -5,6 +5,7 @@ export default createStore({
     counter: 0,
     cart: [],
     categoryName: '',
+    activeCategory: '',
     filteredCat: '',
     availableCategories: [
       'fruits & vegetable',
@@ -66,6 +67,9 @@ export default createStore({
     },
     setCategoryName(state, catName) {
       state.categoryName = catName;
+    },
+    setActiveCategory(state, activeCat) {
+      state.activeCategory = activeCat;
     },
     setListIndex(state) {
       let width = state.windowSize;
