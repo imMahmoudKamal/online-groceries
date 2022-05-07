@@ -66,6 +66,11 @@ watch(
 header {
   background-color: #ffffff;
   filter: drop-shadow(0px 3px 6px rgb(83, 177, 117, 0.1));
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 .header__icons {
   height: 60px;
