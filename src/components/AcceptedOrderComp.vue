@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 
 const orderElementRef = ref(null);

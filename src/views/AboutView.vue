@@ -20,7 +20,6 @@
       <!-- Locations Section -->
       <section class="location" aria-labelledby="#location">
         <h2 class="section-title" id="location">Location</h2>
-
         <LocationComp />
       </section>
     </main>

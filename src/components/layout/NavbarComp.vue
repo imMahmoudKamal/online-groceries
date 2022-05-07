@@ -1,25 +1,25 @@
 <template>
   <header>
-    <div class="header__icons container">
-      <router-link to="/" class="logo-container">
-        <LogoIcon class="header__icons__logo" />
-      </router-link>
-      <div>
-        <router-link to="/signin">
-          <UserIcon v-if="!user" class="header__icons__user" />
-          <LoggedIcon
-            v-if="user"
-            class="header__icons__user"
-            @click="handleSignOut"
-          ></LoggedIcon>
+    <div class="container">
+      <div class="header__icons">
+        <router-link to="/" class="logo-container">
+          <LogoIcon class="header__icons__logo" />
         </router-link>
-        <router-link
-          to="/cart"
-          class="header__cart"
-          :class="{ 'header__cart--active': cartIsNotEmpty }"
-        >
-          <CartIcon class="header__icons__cart" />
-        </router-link>
+        <div>
+          <router-link to="/signin" v-if="!user">
+            <UserIcon class="header__icons__user" />
+          </router-link>
+          <router-link to="/" v-else @click="handleSignOut">
+            <LoggedIcon class="header__icons__user"></LoggedIcon>
+          </router-link>
+          <router-link
+            to="/cart"
+            class="header__cart"
+            :class="{ 'header__cart--active': cartIsNotEmpty }"
+          >
+            <CartIcon class="header__icons__cart" />
+          </router-link>
+        </div>
       </div>
       <nav>
         <ul class="navigation__list">
@@ -32,19 +32,14 @@
   </header>
 </template>
 <script setup>
-// export default {};
-// Element.getBoundingClientRect()
 import LogoIcon from '@imgs/svg/logo-icon.svg';
 import CartIcon from '@imgs/svg/cart-icon.svg';
 import UserIcon from '@imgs/svg/user-icon.svg';
 import LoggedIcon from '@imgs/svg/logged-icon.svg';
-import firebase from 'firebase/compat/app'; //v9
-import { useRouter } from 'vue-router';
+import firebase from 'firebase/compat/app';
 import { useStore } from 'vuex';
 import { computed, watch } from 'vue';
 const store = useStore();
-
-const router = useRouter();
 
 const handleSignOut = () => {
   firebase.auth().signOut();
@@ -52,17 +47,9 @@ const handleSignOut = () => {
   store.commit('setUser', null);
   localStorage.removeItem('user');
   console.log(store.state.user);
-  router.push('/home');
 };
 
 const user = computed(() => store.state.user);
-// const handleRoute = () => {
-//   firebase.auth().onAuthStateChanged((user) => {
-//     if (!user) {
-//       router.push('/signin');
-//     }
-//   });
-// };
 
 const cartIsNotEmpty = computed(() => store.state.cart.length);
 
@@ -82,7 +69,7 @@ header {
 }
 .header__icons {
   height: 60px;
-  padding: 15px 0px;
+  padding: 15px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,6 +89,7 @@ header {
 }
 nav {
   height: 30px;
+  // padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,8 +152,8 @@ button:hover {
 }
 @media (min-width: 75rem) {
   nav {
-    // margin-left: calc(100vw * 0.5 - 342px);
-    margin-left: 35vw;
+    margin-left: calc(100vw * 0.5 - 342px);
+    // margin-left: 100px;
   }
 }
 
