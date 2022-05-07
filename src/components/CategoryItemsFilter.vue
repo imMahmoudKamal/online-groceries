@@ -9,38 +9,28 @@ import ItemsListComp from '../components/ItemListComp.vue';
 import DB from '@/db.json';
 
 export default {
+  props: ['filteredCategory'],
   data() {
     return {
       allCatItems: [],
+      filterCat: this.filteredCategory,
     };
   },
   components: { ItemsListComp },
   created() {
-    if (
-      this.$store.getters.getFilteredCat == '' ||
-      this.$store.getters.getCategoryName == '' ||
-      this.$store.state.activeCategory == ''
-    ) {
-      this.$store.commit('setFilteredCat', 'beverages');
-      this.$store.commit('setCategoryName', 'beverages');
-      this.$store.commit('setActiveCategory', 'beverages');
-      this.$router.push(`/shop/beverages`);
-    } else {
-      this.$store.commit('setFilteredCat', this.$route.params.cartName);
-    }
-
     this.getAllCatItems();
   },
 
   watch: {
     $route() {
+      this.filterCat = this.$route.params.category;
       this.getAllCatItems();
     },
   },
   methods: {
     getAllCatItems() {
       this.allCatItems = DB.data.filter(
-        (item) => item.category == this.$store.getters.getFilteredCat
+        (item) => item.category == this.filterCat
       );
     },
   },

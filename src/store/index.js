@@ -2,32 +2,22 @@ import { createStore } from 'vuex';
 
 export default createStore({
   state: {
-    counter: 0,
     cart: [],
-    categoryName: '',
-    activeCategory: '',
-    filteredCat: '',
     availableCategories: [
-      'fruits & vegetable',
-      'cooking oil & ghee',
-      'meat & fish',
-      'bakery & snacks',
-      'dairy & eggs',
-      'beverages',
-      'crockery & cutlery',
-      'snakes & branded foods',
+      { title: 'fruits & vegetable', id: 'fruits_vegetable' },
+      { title: 'cooking oil & ghee', id: 'oil_ghee' },
+      { title: 'meat & fish', id: 'meat' },
+      { title: 'bakery & snacks', id: 'bakery' },
+      { title: 'dairy & eggs', id: 'dairy_eggs' },
+      { title: 'beverages', id: 'beverages' },
+      { title: 'crockery & cutlery', id: 'crockery_cutlery' },
+      { title: 'snakes & branded foods', id: 'snakes' },
     ],
-    showedList: [],
-    hiddenList: [],
-    listIndex: '',
-    windowSize: '',
+
     user: localStorage.getItem('user') || null,
   },
 
   mutations: {
-    increment: (state) => state.counter++,
-    decrement: (state) => state.counter--,
-
     addToCart: (state, newItem) => {
       const isExist = state.cart.some((item) => item.id === newItem.id);
 
@@ -62,30 +52,6 @@ export default createStore({
       return (localStorage.myCart = JSON.stringify(state.cart));
     },
 
-    setFilteredCat(state, compName) {
-      state.filteredCat = compName;
-    },
-    setCategoryName(state, catName) {
-      state.categoryName = catName;
-    },
-    setActiveCategory(state, activeCat) {
-      state.activeCategory = activeCat;
-    },
-    setListIndex(state) {
-      let width = state.windowSize;
-      if (width >= 368 && width < 768) {
-        state.listIndex = 1;
-      } else if (width >= 768 && width < 992) {
-        state.listIndex = 2;
-      } else if (width >= 992 && width < 1200) {
-        state.listIndex = 3;
-      } else {
-        state.listIndex = 4;
-      }
-    },
-    setWindowSize: (state, width) => {
-      state.windowSize = width;
-    },
     setUser(state, payload) {
       state.user = payload;
       localStorage.setItem('user', payload);
@@ -93,21 +59,5 @@ export default createStore({
     },
   },
 
-  getters: {
-    getCounter: (state) => state.counter,
-    getFilteredCat: (state) => state.filteredCat,
-    getCategoryName: (state) => state.categoryName,
-    getAvailableCategories: (state) => state.availableCategories,
-    getShowList: (state) => {
-      return (state.showedList = state.availableCategories
-        .filter((item) => item != state.categoryName)
-        .splice(0, state.listIndex));
-    },
-    getHideList: (state) => {
-      return (state.hiddenList = state.availableCategories
-        .filter((item) => item != state.categoryName)
-        .splice(state.listIndex));
-    },
-    getWindowSize: (state) => state.windowSize,
-  },
+  getters: {},
 });

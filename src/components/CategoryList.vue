@@ -1,10 +1,6 @@
 <template>
   <ul class="categories">
-    <li
-      v-for="category in categoriesInfo"
-      :key="category.Name"
-      @click="selectActiveCategory(category.Name)"
-    >
+    <li v-for="category in categoriesInfo" :key="category.id">
       <CategoryComp :categoryInfo="category" />
     </li>
   </ul>
@@ -17,21 +13,6 @@ export default {
   name: 'categoryList ',
   components: { CategoryComp },
   props: ['categoriesInfo'],
-
-  data() {
-    return {
-      categoriesInformation: [],
-      activeCategory: '',
-    };
-  },
-  methods: {
-    selectActiveCategory(name) {
-      this.$store.commit('setCategoryName', name);
-      this.$store.commit('setFilteredCat', name);
-    },
-  },
-
-  created() {},
 };
 </script>
 

@@ -4,10 +4,9 @@
     :style="{
       backgroundColor: categoryInformation.BackgroundColor,
     }"
-    @click="this.$store.commit('setFilteredCat', categoryInformation.Name)"
   >
     <router-link
-      :to="`/shop/${categoryInformation.Name}`"
+      :to="`/shop/${categoryInformation.id}`"
       class="wrapper"
       :style="{
         border: categoryInformation.Border,
