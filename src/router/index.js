@@ -50,9 +50,10 @@ const router = createRouter({
       component: () => import('../views/CatDetailsView.vue'),
     },
     {
-      path: '/:category/:item',
+      path: '/:category/:itemID',
       name: 'Product',
       component: () => import('../views/ProductView.vue'),
+      props: true,
     },
   ],
   scrollBehavior() {

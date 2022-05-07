@@ -1,6 +1,9 @@
 <template>
   <div class="item">
-    <router-link to="/category/item" class="wrapper">
+    <router-link
+      :to="{ name: 'Product', params: { ...createItemLink() } }"
+      class="wrapper"
+    >
       <div class="item__img">
         <span class="item__img__blur">
           <img :src="props.itemDetails.imgs[0]" alt="item-image" />
@@ -29,6 +32,17 @@ import PlusIcon from '@imgs/svg/plus.svg';
 import { useStore } from 'vuex';
 const store = useStore();
 const props = defineProps({ itemDetails: Object });
+
+function createItemLink() {
+  return {
+    category: props.itemDetails.category,
+    itemID: props.itemDetails.title
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z]+/g, '_')
+      .concat(`-${props.itemDetails.id}`),
+  };
+}
 </script>
 
 <style lang="scss" scoped>
