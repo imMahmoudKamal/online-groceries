@@ -2,32 +2,24 @@
   <ul class="groceries">
     <li>
       <div class="groceries__item">
-        <span class="groceries__item__img">
-          <PulsesIcon />
+        <span>
+          <img class="groceries__item__img" src="../assets/images/pulses.png" />
         </span>
         <p class="groceries__item__text">Pulses</p>
       </div>
     </li>
     <li>
       <div class="groceries__item">
-        <span class="groceries__item__img">
-          <PulsesIcon />
+        <span>
+          <img class="groceries__item__img" src="../assets/images/pulses.png" />
         </span>
         <p class="groceries__item__text">Pulses</p>
       </div>
     </li>
     <li>
       <div class="groceries__item">
-        <span class="groceries__item__img">
-          <PulsesIcon />
-        </span>
-        <p class="groceries__item__text">Pulses</p>
-      </div>
-    </li>
-    <li>
-      <div class="groceries__item">
-        <span class="groceries__item__img">
-          <PulsesIcon />
+        <span>
+          <img class="groceries__item__img" src="../assets/images/pulses.png" />
         </span>
         <p class="groceries__item__text">Pulses</p>
       </div>
@@ -35,12 +27,12 @@
   </ul>
 </template>
 <script setup>
-import PulsesIcon from '@imgs/svg/pulses.svg';
 // export default {};
 </script>
 <style lang="scss" scoped>
-.groceries {
-  all: unset;
+ul {
+  margin: 0;
+  padding: 0;
 }
 .groceries {
   list-style: none;
@@ -50,6 +42,16 @@ import PulsesIcon from '@imgs/svg/pulses.svg';
 
   &::-webkit-scrollbar {
     display: none;
+  }
+  @media (min-width: 48rem) {
+    width: 100%;
+    overflow: visible;
+    white-space: normal;
+    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding: 0;
   }
 
   &__item {
@@ -62,20 +64,25 @@ import PulsesIcon from '@imgs/svg/pulses.svg';
     display: flex;
     align-items: center;
 
-    @media (min-width: 62rem) {
+    @media (min-width: 48rem) {
       height: 250px;
-      width: 460px;
+      width: 100%;
       padding: 0 30px;
+      margin: 0;
     }
 
     &__img {
       margin-right: 1rem;
+      width: 70px;
 
       @media (min-width: 62rem) {
         margin-right: 1.5rem;
-        height: 180px;
-        width: 180px;
         background-size: 180px;
+        width: 180px;
+
+        & svg {
+          width: inherit;
+        }
       }
     }
 

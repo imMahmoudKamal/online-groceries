@@ -6,7 +6,12 @@
       </router-link>
       <div>
         <router-link to="/signin">
-          <UserIcon class="header__icons__user" />
+          <UserIcon v-if="!user" class="header__icons__user" />
+          <LoggedIcon
+            v-if="user"
+            class="header__icons__user"
+            @click="handleSignOut"
+          ></LoggedIcon>
         </router-link>
         <router-link
           to="/cart"
@@ -16,17 +21,15 @@
           <CartIcon class="header__icons__cart" />
         </router-link>
       </div>
+      <nav>
+        <ul class="navigation__list">
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/shop">Shop</router-link></li>
+          <li><router-link to="/about">About</router-link></li>
+        </ul>
+      </nav>
     </div>
   </header>
-  <nav>
-    <ul class="navigation__list">
-      <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/shop">Shop</router-link></li>
-      <li><router-link to="/about">About</router-link></li>
-    </ul>
-  </nav>
-  <button @click="handleSignOut">sign out</button>
-  <span v-if="user">{{ user.email }}</span>
 </template>
 <script setup>
 // export default {};
@@ -34,6 +37,7 @@
 import LogoIcon from '@imgs/svg/logo-icon.svg';
 import CartIcon from '@imgs/svg/cart-icon.svg';
 import UserIcon from '@imgs/svg/user-icon.svg';
+import LoggedIcon from '@imgs/svg/logged-icon.svg';
 import firebase from 'firebase/compat/app'; //v9
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
@@ -48,7 +52,7 @@ const handleSignOut = () => {
   store.commit('setUser', null);
   localStorage.removeItem('user');
   console.log(store.state.user);
-  router.push('/signin'); //go to home
+  router.push('/home');
 };
 
 const user = computed(() => store.state.user);
@@ -160,7 +164,8 @@ button:hover {
 }
 @media (min-width: 75rem) {
   nav {
-    margin-left: calc(100vw * 0.5 - 342px);
+    // margin-left: calc(100vw * 0.5 - 342px);
+    margin-left: 35vw;
   }
 }
 
