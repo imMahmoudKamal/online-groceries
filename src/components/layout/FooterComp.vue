@@ -296,27 +296,13 @@ import ConnectionIcon from '@imgs/svg/connection.svg';
     height: 220px;
     align-items: center;
     & .logo {
-      height: 100px;
+      height: 60px;
       margin-right: 58%;
     }
 
     & .connect {
       height: 50px;
     }
-
-    // @media (min-width: 768px) and (max-width: 1200px) {
-    //   flex-direction: column;
-    //   align-items: center;
-    //   justify-content: center;
-    //   & .connect {
-    //     width: 300px;
-    //   }
-
-    //   & .logo {
-    //     width: 300px;
-    //     margin-right: 0;
-    //   }
-    // }
   }
   @media (min-width: 0px) and (max-width: 768px) {
     & .div {
