@@ -335,6 +335,7 @@ import ConnectionIcon from '@imgs/svg/connection.svg';
   @media (min-width: 992px) and (max-width: 1200px) {
     & .div {
       width: 100%;
+      justify-content: space-between;
       padding: 0 75px;
       & .logo {
         margin-right: 20%;
